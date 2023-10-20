@@ -8,13 +8,13 @@ const PORT = process.env.PORT
 
 
 //rutas
-const productRoutes = require('./app/routes/products.routes')
+const productRoutes = require('../app/routes/products.routes')
 
 
 //middle
 app.use(cors(
     {
-        origin: true,
+        origin: ['https://casafutbol-api.vercel.app/'],
         credentials: true,
         methods: ["POST", "GET"],
         allowedHeaders: ['Content-Type', 'Authorization']
