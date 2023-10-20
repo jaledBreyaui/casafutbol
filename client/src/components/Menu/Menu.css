@@ -1,0 +1,76 @@
+.p-menubar {
+    display: flex;
+    justify-content: space-between;
+    background: inherit !important;
+    width: 100%;
+}
+
+.p-menubar-root-list {
+    flex-grow: 2;
+    justify-content: center;
+}
+
+#basic-button,
+#doubledd-button,
+.p-menubar-root-list>li {
+    gap: 20px;
+    margin: 10px 20px;
+    font-size: 15px;
+    color: #FFF;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 600ms;
+}
+
+.p-menubar-root-list>li:nth-last-child(1) {
+    width: 10%;
+}
+
+.p-menuitem {
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 600ms;
+}
+
+
+
+.p-menuitem-text {
+    color: #FFF !important;
+    transition: .2s;
+}
+
+.p-menuitem-text:hover {
+    color: #94DD26 !important;
+}
+
+.p-menubar-root-list>li>a>span:hover {
+    color: black
+}
+
+
+
+.p-submenu-list {
+    background-color: var(--black) !important;
+}
+
+.p-submenu-list:hover,
+.p-submenu-list>li:hover,
+.p-submenu-list>li>a:hover {
+    background-color: black !important;
+}
+
+.p-submenu-list>li>a>span:hover {
+    opacity: .5;
+}
+
+.p-menubar .p-menuitem.p-menuitem-active>.p-menuitem-link {
+    background-color: black;
+}
+
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link .p-submenu-icon {
+    color: white;
+}
+
+.p-menubar .p-menuitem-link .p-submenu-icon {
+    color: white;
+}

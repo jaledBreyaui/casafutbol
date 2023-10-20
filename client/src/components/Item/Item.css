@@ -1,0 +1,135 @@
+.item-detail-container {
+    margin: 160px auto 0 auto;
+}
+
+.item {
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 5% 95%;
+    grid-template-areas: "breadcrumb breadcrumb"
+        "item-image  item-info  ";
+    place-items: center;
+    row-gap: 20px;
+}
+
+.item-image {
+    margin-top: 20px;
+    grid-area: item-image;
+}
+
+.item-image>img {
+    height: 65vh;
+}
+
+.item-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    grid-area: item-info;
+}
+
+.product-title {
+    font-size: 30px;
+}
+
+.item-info-price {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.item-info>div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+}
+
+.item-info>div:nth-child(1)>p {
+    display: flex;
+    gap: 10px;
+}
+
+.addtocart-btn {
+    text-align: center;
+    margin-top: 25%;
+    width: 50%;
+    padding: 13px;
+    height: 50px;
+    border: linear-gradient(to right, rgba(73, 84, 192, 1) 0%, rgba(131, 96, 210, 1) 40%);
+    border-radius: 10px;
+    font-weight: 1000;
+    letter-spacing: 1.5px;
+    align-self: center;
+    background-color: black;
+    color: white;
+}
+
+.addtocart-btn:hover {
+    color: gray;
+}
+
+.item-stock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 5%;
+    gap: 25px;
+}
+
+.item-stock>p {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.item-stock-size {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item-stock-size>p {
+    font-size: 20px;
+}
+
+.size-selector {
+    display: flex;
+    flex-direction: row;
+    gap: 15%;
+}
+
+.size-selector>button {
+    width: 50px;
+    /* background-color: transparent; */
+    border: 1px solid black;
+    padding: 5%;
+    font-weight: 600;
+}
+
+.available {
+
+    cursor: pointer;
+}
+
+.available:hover {
+    color: white;
+    background-color: black;
+}
+
+
+.outofstock {
+    opacity: .9;
+    background-color: gray;
+}
+
+.breadcrumb {
+    grid-area: breadcrumb;
+}

@@ -1,0 +1,30 @@
+.breadcrumb {
+    display: flex;
+    text-align: left;
+    gap: 5px;
+    width: 100%;
+}
+
+.breadcrumb>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.breadcrumb>div>a {
+    color: black;
+}
+
+.breadcrumb>div>a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item {
+    margin-left: 7%;
+}
+
+.breadcrumb-category {
+    justify-content: flex-start;
+}

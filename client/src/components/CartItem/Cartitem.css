@@ -1,0 +1,34 @@
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-bottom: 5%;
+    height: 80%;
+}
+
+
+
+.cart-item-img {}
+
+.cart-item-img>img {
+    height: 100px;
+}
+
+.cart-item-data {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.cart-item-title {}
+
+.cart-item-size {}
+
+.cart-item-price {
+    font-weight: 600;
+}
+
+.cart-item-delete {
+    display: flex;
+    align-items: center;
+}

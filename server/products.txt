@@ -1,0 +1,664 @@
+[
+  {
+    "title": "CAMISETA ARQUERO ATALANTA 2021-2022",
+    "team": "ATALANTA",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "ARQUERO",
+      "ATALANTA",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETAARQUEROATALANTA2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA CUARTA EQUIPACION BAYERN MUNICH 2021-2022",
+    "team": "BAYERN MUNICH",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "CUARTA",
+      "EQUIPACION",
+      "BAYERN",
+      "MUNICH",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETACUARTAEQUIPACIONBAYERNMUNICH2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA ENTRENAMIENTO PSG 2021-2022",
+    "team": "PSG",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "ENTRENAMIENTO",
+      "PSG",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETAENTRENAMIENTOPSG2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA REAL MADRID EDICION LIMITADA Y-3 BLACK 2022",
+    "team": "REAL MADRID",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "REAL",
+      "MADRID",
+      "EDICION",
+      "LIMITADA",
+      "Y-3",
+      "BLACK",
+      "2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETAREALMADRIDEDICIONLIMITADAY-3BLACK2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA SUPLENTE AJAX 2022-2023",
+    "team": "AJAX",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "SUPLENTE",
+      "AJAX",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETASUPLENTEAJAX2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA SUPLENTE BOCA 2023-2024",
+    "team": "BOCA",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "SUPLENTE",
+      "BOCA",
+      "2023-2024"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETASUPLENTEBOCA2023-2024.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 0,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA SUPLENTE CORINTHIANS 2022-2023",
+    "team": "CORINTHIANS",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "SUPLENTE",
+      "CORINTHIANS",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETASUPLENTECORINTHIANS2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA SUPLENTE NAPOLI 2022-2023",
+    "team": "NAPOLI",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "SUPLENTE",
+      "NAPOLI",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETASUPLENTENAPOLI2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA SUPLENTE RIVER 2022-2023",
+    "team": "RIVER",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "SUPLENTE",
+      "RIVER",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETASUPLENTERIVER2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA SUPLENTE TOTTENHAM 2021-2022",
+    "team": "TOTTENHAM",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "SUPLENTE",
+      "TOTTENHAM",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETASUPLENTETOTTENHAM2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 0,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA SUPLENTE ZENIT 2021-2022",
+    "team": "ZENIT",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "SUPLENTE",
+      "ZENIT",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETASUPLENTEZENIT2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 0,
+      "xl": 1,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TERCERA EQUIPACION CHELSEA 2022-2023",
+    "team": "CHELSEA",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TERCERA",
+      "EQUIPACION",
+      "CHELSEA",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATERCERAEQUIPACIONCHELSEA2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 0,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TERCERA EQUIPACION VASCO DA GAMA 2021-2022",
+    "team": "VASCO DA GAMA",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TERCERA",
+      "EQUIPACION",
+      "VASCO",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATERCERAEQUIPACIONVASCODAGAMA2021-2022.jpg",
+    "stock": {
+      "s": 1,
+      "m": 0,
+      "l": 0,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR ARQUERO MARSELLA 2021-2022",
+    "team": "MARSELLA",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "ARQUERO",
+      "MARSELLA",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARARQUEROMARSELLA2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 0,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR ARSENAL 2022-2023",
+    "team": "ARSENAL",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "ARSENAL",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARARSENAL2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 1,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR ATLETICO DE MADRID 2022-2023",
+    "team": "ATLETICO MADRID",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "ATLETICO",
+      "DE",
+      "MADRID",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARATLETICODEMADRID2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR BAYERN MUNICH 2021-2022",
+    "team": "BAYERN MUNICH",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "BAYERN",
+      "MUNICH",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARBAYERNMUNICH2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR CHELSEA 2022-2023",
+    "team": "CHELSEA",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "CHELSEA",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARCHELSEA2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR CORINTHIANS 2022-2023",
+    "team": "CORINTHIANS",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "CORINTHIANS",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARCORINTHIANS2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR DEPORTIVO LA CORUÑA 2021-2022",
+    "team": "DEPORTIVO LA CORUÑA",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "DEPORTIVO",
+      "LA",
+      "CORUÑA",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARDEPORTIVOLACORUÑA2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR JUVENTUS 2021-2022",
+    "team": "JUVENTUS",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "JUVENTUS",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARJUVENTUS2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR MANCHESTER CITY 2022-2023",
+    "team": "MANCHESTER CITY",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "MANCHESTER",
+      "CITY",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARMANCHESTERCITY2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 0,
+      "xl": 1,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR MANCHESTER UNITED 2022-2023",
+    "team": "MANCHESTER UNITED",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "MANCHESTER",
+      "UNITED",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARMANCHESTERUNITED2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR MARSELLA 2021-2022",
+    "team": "MARSELLA",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "MARSELLA",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARMARSELLA2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 1,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR MILAN 2021-2022",
+    "team": "MILAN",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "MILAN",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARMILAN2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 1,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR NAPOLI 2022-2023",
+    "team": "NAPOLI",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "NAPOLI",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARNAPOLI2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 1,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR PALMEIRAS 2022-2023",
+    "team": "PALMEIRAS",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "PALMEIRAS",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARPALMEIRAS2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR PARMA 2021-2022",
+    "team": "PARMA",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "PARMA",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARPARMA2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR POLONIA 2022-2023",
+    "team": "POLONIA",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "POLONIA",
+      "2022-2023"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARPOLONIA2022-2023.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR PSG 2021-2022",
+    "team": "PSG",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "PSG",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARPSG2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA TITULAR REAL BETIS 2021-2022",
+    "team": "REAL BETIS",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "TITULAR",
+      "REAL",
+      "BETIS",
+      "2021-2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETATITULARREALBETIS2021-2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 1,
+      "l": 0,
+      "xl": 0,
+      "xxl": 0
+    }
+  },
+  {
+    "title": "CAMISETA EDICION LIMITADA REAL MADRID  Y-3 PINK 2022",
+    "team": "REAL MADRID",
+    "price": 0,
+    "category": "Clubes Actual",
+    "tags": [
+      "CAMISETA",
+      "EDICION",
+      "LIMITADA",
+      "REAL",
+      "MADRID",
+    
+      "Y-3",
+      "PINK",
+      "2022"
+    ],
+    "path": "/public/imgs/clubesActual/CAMISETAEDICIONLIMITADAREALMADRIDY-3PINK2022.jpg",
+    "stock": {
+      "s": 0,
+      "m": 0,
+      "l": 1,
+      "xl": 0,
+      "xxl": 0
+    }
+  }
+]

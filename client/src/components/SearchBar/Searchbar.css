@@ -1,0 +1,40 @@
+.searchbar {
+    width: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2%;
+    margin-top: -2px;
+    position: relative;
+}
+
+.search-input {
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    padding-left: 30px;
+    height: 1.8rem;
+    opacity: 0;
+    transition: .5;
+    width: 200px;
+    color: white;
+    font-size: 15px;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+
+.search-expanded {
+    display: flex;
+    opacity: 1;
+}
+
+.searchbar>i {
+    z-index: 1;
+    color: #4f5b66;
+    background: transparent;
+    border: none;
+    position: absolute;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/styles/home/modify.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cargar">
+        <form action="/buscarproducto" method="POST" class="form" enctype="application/x-www-form-urlencoded">
+            <h1>Modificar un producto</h1>
+            <input placeholder="Id del producto" name="prodId">
+            <button type="submit" id="">Buscar</button>
+        </form>
+    </div>
+    <% if(product){ %>
+        <form action="/modificarproducto" method="post" enctype="multipart/form-data" class="putproductform">
+            <label>ID</label>
+            <input value="<%=product._id%>" class="hidden" name="id">
+            <input value="<%=product._id%>" disabled>
+            <label>Nombre</label>
+            <input value="<%=product.nombre%>" name="nombre">
+            <label>Marca</label>
+            <input value="<%=product.marca%>" name="marca">
+            <label>Precio</label>
+            <input value="<%=product.precio%>" name="precio">
+            <label>Tags</label>
+            <input value="<%=product.tags%>" name="tags">
+            <label>Foto (si no subís ninguna queda la actual)</label>
+            <input type="file" name="fotoProducto" value="<%=product.image%>">
+            <button type="submit" id="">Actualizar</button>
+        </form>
+        <form action="/deleteproduct" method="post" enctype="application/x-www-form-urlencoded" class="deleteproduct">
+            <input value="<%=product._id%>" class="hidden" name="id">
+            <button type="submit" id="eliminar">Eliminar</button>
+        </form>
+        <%} else { %>
+            <h2>No hay productos con ese Id</h2>
+            <%}%>
+                <div class="overlay"></div>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>

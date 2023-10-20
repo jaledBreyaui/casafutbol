@@ -1,0 +1,15 @@
+.cartIcon {
+    position: relative;
+    text-align: end;
+    margin-right: 5px;
+}
+
+.cart-icon-quant {
+    position: absolute;
+    background-color: #94DD26;
+    padding: .5px 4px;
+    border-radius: 60%;
+    top: -10px;
+    font-size: 15px;
+    text-align: center;
+}
