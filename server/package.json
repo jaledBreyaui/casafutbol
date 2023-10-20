@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "server": "nodedmon index.js"
+    "server": "nodedmon index.js",
+    "vercel-build": "echo hello"
   },
   "dependencies": {
     "cors": "^2.8.5",
