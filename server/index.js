@@ -12,12 +12,14 @@ const productRoutes = require('./app/routes/products.routes')
 
 
 //middle
-app.use(cors({
-    origin: true,
-    credentials: true,
-    methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}))
+app.use(cors(
+    {
+        origin: true,
+        credentials: true,
+        methods: ["POST", "GET"],
+        allowedHeaders: ['Content-Type', 'Authorization']
+    }
+))
 
 app.use(express.static(__dirname))
 app.use(express.json())
