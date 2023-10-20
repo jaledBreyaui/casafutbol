@@ -4,7 +4,7 @@ const express = require('express');
 const app = express()
 const cors = require('cors');
 const fs = require('fs')
-const PORT = process.env.PORT
+
 
 
 //rutas
@@ -30,9 +30,9 @@ app.use('/', productRoutes)
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/public/views')
 
-app.listen(PORT, (err) => {
+app.listen(5000, (err) => {
     if (err) console.log(err);
-    console.log(`listening in port : ${PORT}`);
+    console.log(`listening in port : 5000`);
 })
 
 
