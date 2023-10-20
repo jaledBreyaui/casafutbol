@@ -14,14 +14,16 @@ export function ProductsProvider({ children }) {
             setLoading(true);
             const response = await fetch('http://localhost:3001/products')
             if (!response.ok) {
+                console.log(response)
                 throw new Error('Could not fetch products')
             }
             const data = await response.json()
             setProducts(addPrice(data))
+
             localStorage.setItem("productosLocal", JSON.stringify(products))
         } catch (error) {
-
-            return (error)
+            console.log(error)
+            return error
         }
         finally {
             setLoading(false)

@@ -1,7 +1,7 @@
 
 require('dotenv').config()
 const express = require('express');
-const app = express()
+const app = express();
 const cors = require('cors');
 const fs = require('fs')
 
@@ -14,9 +14,9 @@ const productRoutes = require('./app/routes/products.routes')
 //middle
 app.use(cors(
     {
-        origin: ['https://casafutbol-api.vercel.app/'],
+        origin: true,
         credentials: true,
-        methods: ["POST", "GET"],
+        methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
         allowedHeaders: ['Content-Type', 'Authorization']
     }
 ))
@@ -30,9 +30,9 @@ app.use('/', productRoutes)
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/public/views')
 
-app.listen(5000, (err) => {
+app.listen(3001, (err) => {
     if (err) console.log(err);
-    console.log(`listening in port : 5000`);
+    console.log(`listening in port : 3001`);
 })
 
 
