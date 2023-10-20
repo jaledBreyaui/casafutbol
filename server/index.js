@@ -30,6 +30,10 @@ app.use('/', productRoutes)
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/public/views')
 
+app.get('/', (req, res) => {
+    res.json('trying...')
+})
+
 app.listen(3001, (err) => {
     if (err) console.log(err);
     console.log(`listening in port : 3001`);
