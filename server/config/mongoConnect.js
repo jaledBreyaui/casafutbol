@@ -9,8 +9,9 @@ const connectMongo = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true
         })
+        console.log("mongo connected")
     } catch (error) {
-        console.error(error)
+        console.log(error)
     }
 }
 

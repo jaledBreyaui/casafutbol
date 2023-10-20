@@ -20,8 +20,10 @@ class ProductsDao {
     async getAll() {
         try {
             const prod = await Product.find({})
+            console.log(prod)
             return prod
         } catch (error) {
+            console.log(error)
             return error
         }
     }
