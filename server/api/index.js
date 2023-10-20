@@ -8,7 +8,7 @@ const fs = require('fs')
 
 
 //rutas
-const productRoutes = require('./app/routes/products.routes')
+const productRoutes = require('../app/routes/products.routes')
 
 
 //middle
