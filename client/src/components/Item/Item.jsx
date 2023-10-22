@@ -21,6 +21,13 @@ export default function Item({ prod }) {
         })
 
     }, [prod])
+
+
+    const peso = new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: 'ARS',
+        minimumFractionDigits: 0
+    })
     return (
         <div className='item'>
             <Breadcrumbs item={breadcrumb} />
@@ -30,7 +37,7 @@ export default function Item({ prod }) {
             <div className='item-info'>
                 <div>
                     <p className="product-title">{prod.title}</p>
-                    <span className='item-info-price'>${prod.price.toLocaleString("ar")}</span>
+                    <span className='item-info-price'>{peso.format(prod.price)}</span>
                     <p>Ver medios de pago <span><i className={"pi pi-credit-card"} style={{ fontSize: '20px' }}></i></span></p>
                 </div>
                 <div className='item-stock'>

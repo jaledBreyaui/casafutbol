@@ -7,6 +7,12 @@ import "./Cart.css"
 
 export default function Cart() {
     const { cartItems, setDisplayCart, displayCart, total } = useContext(CartContext)
+
+    const peso = new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: 'ARS',
+        minimumFractionDigits: 0
+    })
     return (
         <Sidebar visible={displayCart} position="right" onHide={() => setDisplayCart(false)}
             style={{ width: "30rem" }}
@@ -24,7 +30,7 @@ export default function Cart() {
                     </div>
                     <div>
                         <p> Total:</p>
-                        <p>${total().toLocaleString("ar")}</p>
+                        <p>{peso.format(total())}</p>
                     </div>
                 </div>
                 <div className='cart-checkout-btn'>

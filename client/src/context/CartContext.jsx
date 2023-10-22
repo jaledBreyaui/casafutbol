@@ -15,7 +15,7 @@ export function CartProvider({ children }) {
             setCartItems(JSON.parse(cartItemsData))
         }
 
-        console.log(cartItemsData)
+
     }, [])
 
     useEffect(() => {

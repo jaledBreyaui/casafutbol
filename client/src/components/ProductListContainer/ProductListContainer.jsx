@@ -21,6 +21,7 @@ function ProductListContainer() {
             generalCat: "Camisetas",
             category: category ? category : "no"
         })
+        console.log(category)
     }, [category])
     return (
         <div className="product-list-container-wrapper">

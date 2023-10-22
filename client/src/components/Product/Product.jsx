@@ -9,6 +9,13 @@ export default function Product({ prod, className }) {
     //     if (prod.stock.s === 0 && prod.stock.m === 0 && prod.stock.l === 0 && prod.stock.xl === 0)
     //         return true
     // }
+
+
+    const peso = new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: 'ARS',
+        minimumFractionDigits: 0
+    })
     return (
         <div className={className} >
             <Link to={"/item/" + prod._id}>
@@ -19,7 +26,7 @@ export default function Product({ prod, className }) {
             </Link>
             <div className='product-card-description'>
                 <p className='product-card-title'>{prod.title}</p>
-                <p className='product-price'>${prod.price.toLocaleString("ar")}</p>
+                <p className='product-price'>{peso.format(prod.price)}</p>
                 <p className='product-card-category'>{prod.category}</p>
             </div>
         </div>

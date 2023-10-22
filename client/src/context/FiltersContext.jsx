@@ -22,5 +22,5 @@ export function FiltersProvider({ children }) {
 }
 
 FiltersProvider.propTypes = {
-    children: PropTypes.array.isRequired,
+    children: PropTypes.object.isRequired,
 }

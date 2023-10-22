@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const fs = require('fs')
+const helmet = require('helmet')
 const PORT = process.env.PORT || 3001
 
 
@@ -15,7 +16,7 @@ const productRoutes = require('./app/routes/products.routes.js')
 //middle
 app.use(cors(
     {
-        origin: true,
+        origin: "https://www.somoscasafutbol.com/",
         credentials: true,
         methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
         allowedHeaders: ['Content-Type', 'Authorization']
@@ -25,7 +26,7 @@ app.use(cors(
 app.use(express.static(__dirname))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
+app.use(helmet());
 app.use('/', productRoutes)
 
 app.set('view engine', 'ejs')

@@ -6,6 +6,11 @@ import { useContext } from "react"
 function CartItem({ item }) {
     const { removeFromCart } = useContext(CartContext)
 
+    const peso = new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: 'ARS',
+        minimumFractionDigits: 0
+    })
 
     return (
         <div className="cart-item">
@@ -15,7 +20,7 @@ function CartItem({ item }) {
             <div className="cart-item-data">
                 <p className="cart-item-title">{item.title}</p>
                 <p className="cart-item-size">Talle: {item.talleElegido}</p>
-                <p className="cart-item-price"> $ {item.price.toLocaleString("ar")}  </p>
+                <p className="cart-item-price">  {peso.format(item.price)}  </p>
             </div>
             <div className="cart-item-delete">
 

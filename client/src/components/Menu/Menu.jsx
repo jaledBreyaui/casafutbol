@@ -13,7 +13,7 @@ export default function BasicDemo() {
             items: [
                 {
                     label: 'Retro',
-                    url: "/products/search/RETRO/",
+                    url: "https://somoscasafutbol.com/products/search/RETRO/",
                     items: [
                         {
                             label: 'Equipos',
