@@ -4,7 +4,6 @@ const fs = require('fs')
 
 const getProducts = async (req, res) => {
     try {
-        console.log("asking for products")
         const products = await mongo.getAll()
         res.json(products)
     } catch (error) {

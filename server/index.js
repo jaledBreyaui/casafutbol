@@ -4,11 +4,12 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const fs = require('fs')
+const PORT = process.env.PORT
 
 
 
 //rutas
-const productRoutes = require('../app/routes/products.routes.js')
+const productRoutes = require('./app/routes/products.routes.js')
 
 
 //middle
@@ -34,9 +35,10 @@ app.get('/', (req, res) => {
     res.json('trying...')
 })
 
-app.listen(3001, (err) => {
+app.listen(PORT, (err) => {
     if (err) console.log(err);
     console.log(`listening in port : 3001`);
 })
 
+module.exports = app
 
