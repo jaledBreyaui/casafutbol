@@ -10,7 +10,7 @@ function CartItem({ item }) {
     return (
         <div className="cart-item">
             <div className="cart-item-img">
-                <img src={'http://localhost:3001' + item.path} />
+                <img src={'https://casafutbol-production.up.railway.app/' + item.path} />
             </div>
             <div className="cart-item-data">
                 <p className="cart-item-title">{item.title}</p>

@@ -12,7 +12,7 @@ export function ProductsProvider({ children }) {
     const fetchProducts = async () => {
         try {
             setLoading(true);
-            const response = await fetch('http://localhost:3001/products')
+            const response = await fetch('https://casafutbol-production.up.railway.app/products')
             if (!response.ok) {
                 console.log(response)
                 throw new Error('Could not fetch products')
