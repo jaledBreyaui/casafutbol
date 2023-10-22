@@ -6,9 +6,7 @@ import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 
 function ProductListContainer() {
     const { category } = useParams()
-    // function capitalizarPrimeraLetra(str) {
-    //     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-    // }
+
     const [breadcrumb, setBreadcrumb] = useState({
         title: "no",
         generalCategory: "Camisetas",

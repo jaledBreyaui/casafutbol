@@ -16,7 +16,7 @@ const productRoutes = require('./app/routes/products.routes.js')
 //middle
 app.use(cors(
     {
-        origin: "https://www.somoscasafutbol.com/",
+        origin: "https://www.somoscasafutbol.com",
         credentials: true,
         methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
         allowedHeaders: ['Content-Type', 'Authorization']
