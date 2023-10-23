@@ -420,51 +420,7 @@ body {
     background-color: rgba(128, 128, 128, 0.142);
 }
 
-/** Footer**/
 
-.footer {
-    background-color: var(--darkwhite);
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 50px;
-}
-
-.institucional>ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.institucional>ul>li {
-    margin: 10px 0;
-}
-
-.institucional>ul>li>a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: 300;
-}
-
-.institucional>ul>li>a:hover {
-    text-decoration: underline;
-}
-
-.socials {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: space-between;
-}
-
-.copy-container {
-    margin: 0 auto;
-}
 
 
 
