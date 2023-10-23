@@ -32,6 +32,8 @@ export default function Item({ prod }) {
         <div className='item'>
             <Breadcrumbs item={breadcrumb} />
             <div className='item-image'>
+                {/* <img src={'http://localhost:3001' + prod.path} /> */}
+
                 <img src={'https://casafutbol-production.up.railway.app/' + prod.path} />
             </div>
             <div className='item-info'>

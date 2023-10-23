@@ -10,56 +10,7 @@ export default function BasicDemo() {
     const items = [
         {
             label: 'Camisetas',
-            items: [
-                {
-                    label: 'Retro',
-                    url: "https://somoscasafutbol.com/products/search/RETRO/",
-                    items: [
-                        {
-                            label: 'Equipos',
-                            url: "/products/search/CLUBES RETRO/"
-
-                        },
-                        {
-                            label: 'Selecciones',
-                            url: "/products/search/SELECCIONES RETRO/"
-                        },
-                    ]
-                },
-                {
-                    label: 'Actuales',
-                    url: "/products/search/ACTUAL",
-                    items: [
-                        {
-                            label: 'Clubes',
-                            url: "/products/search/CLUBES ACTUAL"
-
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            label: 'Retro',
-            items: [
-                {
-                    label: 'Clubes',
-                    url: "/products/search/CLUBES RETRO"
-                },
-                {
-                    label: 'Selecciones',
-                    url: "/products/search/SELECCIONES RETRO"
-                }
-            ]
-        },
-        {
-            label: 'Actuales',
-            items: [
-                {
-                    label: 'Equipos',
-                    url: "/products/search/CLUBES ACTUAL"
-                }
-            ]
+            url: "/products"
         },
         {
             label: 'Clubes',
@@ -68,6 +19,14 @@ export default function BasicDemo() {
         {
             label: 'Selecciones',
             url: "/products/search/SELECCIONES"
+        },
+        {
+            label: "Retro",
+            url: "/products/search/RETRO",
+        },
+        {
+            label: "Actuales",
+            url: "/products/search/ACTUAL",
         },
         {
             label: "Guía de talles"
