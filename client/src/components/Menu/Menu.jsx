@@ -26,7 +26,7 @@ export default function BasicDemo() {
         },
         {
             label: "Actuales",
-            url: "/products/search/ACTUAL",
+            url: "/products/search/ACTUALES",
         },
         {
             label: "Guía de talles"
