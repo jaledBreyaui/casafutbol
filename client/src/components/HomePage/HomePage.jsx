@@ -22,7 +22,7 @@ export default function HomePage() {
             link: ["Selecciones Retro"]
         },
         {
-            title: 'Equipos Retro',
+            title: 'Clubes Retro',
             src: '/imgs/IMG_3385.jpg',
             srcAlt: "/imgs/liverpoolgrupal.jpg",
             link: ["Clubes Retro "]

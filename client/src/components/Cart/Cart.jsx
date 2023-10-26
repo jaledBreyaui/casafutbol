@@ -3,6 +3,7 @@ import { Sidebar } from 'primereact/sidebar';
 import { CartContext } from "../../context/CartContext"
 import CartItem from '../CartItem/CartItem';
 import "./Cart.css"
+import { Link } from 'react-router-dom';
 
 
 export default function Cart() {
@@ -34,9 +35,9 @@ export default function Cart() {
                     </div>
                 </div>
                 <div className='cart-checkout-btn'>
-                    {cartItems.length >= 1 ? <button>
+                    {cartItems.length >= 1 ? <Link to={"/checkout/start"} >
                         INICIAR COMPRA
-                    </button> : <></>}
+                    </Link> : <></>}
                 </div>
             </div>
         </Sidebar>

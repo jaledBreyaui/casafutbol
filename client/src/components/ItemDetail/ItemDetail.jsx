@@ -5,15 +5,14 @@ import { useParams } from "react-router-dom";
 import ItemSliderContainer from "../ItemSliderContainer/ItemSliderContainer";
 
 
-
 export default function ItemDetail() {
     const { products } = useContext(ProductsContext)
     const { id } = useParams()
 
-
     const product = products.filter((prod) => {
         return prod._id === id
     })
+
 
     const sameTeamProducts = products.filter((prod) => {
         return (
@@ -26,6 +25,7 @@ export default function ItemDetail() {
             product[0].category == prod.category
         )
     })
+
 
 
 

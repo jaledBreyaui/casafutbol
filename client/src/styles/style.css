@@ -13,6 +13,7 @@
     --white: #F2F2F2;
     --black: rgba(0, 0, 0, 0.9);
     --gradient: linear-gradient(to right, rgba(73, 84, 192, 1) 0%, rgba(131, 96, 210, 1) 40%);
+    --violet: rgba(131, 96, 210, 1);
 }
 
 a {
@@ -336,8 +337,8 @@ body {
     margin-top: 10%;
     justify-content: center;
     align-items: flex-start;
-    gap: 105px;
-    padding: 3%;
+    gap: 25px;
+    padding: 0 3%;
 }
 
 
@@ -345,7 +346,8 @@ body {
     display: grid;
     gap: 2px;
     width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    column-gap: 2%;
     justify-items: center;
 
 }

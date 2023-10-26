@@ -33,7 +33,7 @@
     text-align: center;
 }
 
-.cart-checkout-btn>button {
+.cart-checkout-btn>a {
     padding: 13px;
     letter-spacing: 1.5px;
     border-radius: 10px;
@@ -44,6 +44,6 @@
     font-weight: 1000;
 }
 
-.cart-checkout-btn>button:hover {
+.cart-checkout-btn>a:hover {
     color: gray;
 }

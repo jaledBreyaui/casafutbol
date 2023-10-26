@@ -21,7 +21,6 @@ export default function SideMenu() {
             <button className='filters-button' onClick={() => setVisibleLeft(true)}>
                 <span>Filtrar</span> <i className="pi pi-sliders-h" style={{ fontSize: '16px', color: "#000" }}></i>
             </button>
-            <h2>Econtra tu Próxima Camiseta Aca!</h2>
         </div >
     )
 }

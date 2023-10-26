@@ -9,6 +9,9 @@ import { FiltersProvider } from "./context/FiltersContext"
 import { CartProvider } from "./context/CartContext"
 import ScrollToTop from "./assets/scrollToTop"
 import Cart from "./components/Cart/Cart"
+import CheckOut from "./components/CheckOut/CheckOut"
+import FinalCheckOut from "./views/FinalCheckOut"
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +27,8 @@ function App() {
                 <Route exact path="/products/" element={<ProductListContainer />} />
                 <Route exact path="/products/:category" element={<ProductListContainer />} />
                 <Route exact path="/products/search/:category" element={<ProductListContainer />} />
+                <Route exact path="/checkout/start" element={<CheckOut />} />
+                <Route exact path="/checkout/end" element={<FinalCheckOut />} />
               </Routes>
             </ScrollToTop>
             <Footer />

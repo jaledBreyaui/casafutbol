@@ -13,10 +13,6 @@ export default function BasicDemo() {
             url: "/products"
         },
         {
-            label: 'Clubes',
-            url: "/products/search/CLUBES"
-        },
-        {
             label: 'Selecciones',
             url: "/products/search/SELECCIONES"
         },

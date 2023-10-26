@@ -32,9 +32,19 @@ const deleteActuales = async (req, res) => {
     }
 }
 
+const getProductsByCategory = async (req, res) => {
+    try {
+        const { category } = req.params
+        const productsByCategory = await mongo.getByCategory(category)
+        res.json(productsByCategory)
+    } catch (error) {
+        return error
+    }
+}
 
 module.exports = {
     getProducts,
     getProductById,
-    deleteActuales
+    deleteActuales,
+    getProductsByCategory
 }

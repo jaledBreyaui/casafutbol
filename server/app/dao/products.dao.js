@@ -36,6 +36,15 @@ class ProductsDao {
         }
     }
 
+
+    async getByCategory(category) {
+        try {
+            const prod = await Product.find({ "category": category })
+            return prod
+        } catch (error) {
+            return error
+        }
+    }
     async delete() {
         try {
             const products = await Product.deleteMany({ categories: { $all: ["actuales"] } })
