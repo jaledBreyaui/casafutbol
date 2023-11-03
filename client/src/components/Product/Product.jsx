@@ -1,16 +1,6 @@
 import PropTypes from 'prop-types';
-// import { useEffect } from 'react';
 import { Link } from "react-router-dom"
-
-
-
 export default function Product({ prod, className }) {
-    // const soldOut = () => {
-    //     if (prod.stock.s === 0 && prod.stock.m === 0 && prod.stock.l === 0 && prod.stock.xl === 0)
-    //         return true
-    // }
-
-
     const peso = new Intl.NumberFormat('es-AR', {
         style: 'currency',
         currency: 'ARS',
@@ -20,8 +10,8 @@ export default function Product({ prod, className }) {
         <div className={className} >
             <Link to={"/item/" + prod._id}>
                 <div className=''>
-                    <img src={'http://localhost:3001' + prod.path} className='product-image' />
-                    {/* <img src={'https://casafutbol-production.up.railway.app/' + prod.path} className='product-image' /> */}
+                    {/* <img src={'http://localhost:3001' + prod.path} className='product-image' /> */}
+                    <img src={'https://casafutbol-production.up.railway.app/' + prod.path} className='product-image' />
                 </div>
             </Link>
             <div className='product-card-description'>
