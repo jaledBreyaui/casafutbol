@@ -6,8 +6,8 @@ import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import Pagination from "../Pagination/Pagination";
 import { useFilters } from "../../hooks/useFilters";
 
-
 function ProductListContainer() {
+    const server = import.meta.env.PROD ? "https://casafutbol-production.up.railway.app" : " http://localhost:3001"
     const { category } = useParams()
     const { team } = useParams()
     const { search } = useParams()
@@ -32,8 +32,8 @@ function ProductListContainer() {
         setLoading(true)
         try {
             if (category === undefined && team === undefined) {
-                // const response = await fetch(`http://localhost:3001/products/?page=${currentPage}`)
-                const response = await fetch(`https://casafutbol-production.up.railway.app/products/?page=${currentPage}`)
+                const response = await fetch(`${server}/products/?page=${currentPage}`)
+                // const response = await fetch(`https://casafutbol-production.up.railway.app/products/?page=${currentPage}`)
 
                 if (!response.ok) {
                     throw new Error('Could not fetch products')
@@ -44,7 +44,7 @@ function ProductListContainer() {
             }
             if (category) {
                 // const response = await fetch(`http://localhost:3001/products-category/${category.toUpperCase()}/?page=${currentPage}`)
-                const response = await fetch(`https://casafutbol-production.up.railway.app/products-category/${category.toUpperCase()}/?page=${currentPage}`)
+                const response = await fetch(`${server}/products-category/${category.toUpperCase()}/?page=${currentPage}`)
 
 
                 if (!response.ok) {
@@ -56,7 +56,7 @@ function ProductListContainer() {
             }
             if (team) {
                 // const response = await fetch(`http://localhost:3001/products-team/${team.toUpperCase()}/?page=${currentPage}`)
-                const response = await fetch(`https://casafutbol-production.up.railway.app/products-team/${team.toUpperCase()}/?page=${currentPage}`)
+                const response = await fetch(`${server}/products-team/${team.toUpperCase()}/?page=${currentPage}`)
 
                 if (!response.ok) {
                     throw new Error('Could not fetch products')
@@ -67,7 +67,7 @@ function ProductListContainer() {
             }
             if (search) {
                 // const response = await fetch(`http://localhost:3001/products`)
-                const response = await fetch(`https://casafutbol-production.up.railway.app/products`)
+                const response = await fetch(`${server}/products`)
                 if (!response.ok) {
                     throw new Error('Could not fetch products')
                 }

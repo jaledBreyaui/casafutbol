@@ -7,7 +7,7 @@ import { ProgressSpinner } from 'primereact/progressspinner';
 
 
 export default function Item({ prod, loading }) {
-
+    const server = import.meta.env.PROD ? "https://casafutbol-production.up.railway.app" : " http://localhost:3001"
     const { addItem } = useContext(CartContext)
     const [size, setSize] = useState()
     const [breadcrumb, setBreadcrumb] = useState({
@@ -35,9 +35,7 @@ export default function Item({ prod, loading }) {
             {loading && <ProgressSpinner />}
             <Breadcrumbs item={breadcrumb} />
             <div className='item-image'>
-                <img src={'http://localhost:3001/' + prod.path} />
-
-                {/* <img src={'https://casafutbol-production.up.railway.app/' + prod.path} /> */}
+                <img src={`${server}` + prod.path} />
             </div>
             <div className='item-info'>
                 <div>

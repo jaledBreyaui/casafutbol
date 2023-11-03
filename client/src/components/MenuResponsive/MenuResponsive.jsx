@@ -8,6 +8,7 @@ import SearchBar from "../SearchBar/SearchBar";
 
 
 export default function MenuResponsive() {
+
     const [visible, setVisible] = useState(false);
     const items = [
         {

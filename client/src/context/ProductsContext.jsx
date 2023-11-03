@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 export const ProductsContext = createContext();
 
 export function ProductsProvider({ children }) {
-
+    const server = import.meta.env.PROD ? "https://casafutbol-production.up.railway.app" : " http://localhost:3001"
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false)
 
     const fetchProducts = async () => {
         try {
             setLoading(true);
-            const response = await fetch('https://casafutbol-production.up.railway.app/products')
+            const response = await fetch(`${server}/products`)
             // const response = await fetch("http://localhost:3001/products")
             if (!response.ok) {
                 console.log(response)
