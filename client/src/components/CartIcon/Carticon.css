@@ -7,7 +7,7 @@
 .cart-icon-quant {
     position: absolute;
     background-color: #94DD26;
-    padding: .5px 4px;
+    padding: 10% 20%;
     border-radius: 60%;
     top: -10px;
     font-size: 15px;
@@ -16,4 +16,14 @@
 
 .hideCartIcon {
     display: none;
+}
+
+.pi-shopping-cart {
+    font-size: 1.8rem !important;
+}
+
+@media screen and (max-width:1000px) {
+    .pi-shopping-cart {
+        font-size: 2rem !important;
+    }
 }

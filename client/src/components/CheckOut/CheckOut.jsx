@@ -3,13 +3,25 @@ import { CartContext } from "../../context/CartContext"
 import { Dropdown } from 'primereact/dropdown';
 import CartItem from "../CartItem/CartItem"
 import "./Checkout.css"
+import SimpleReactValidator from "simple-react-validator"
 
 export default function CheckOut() {
+    const [visible, setVisible] = useState(false);
+    const validator = new SimpleReactValidator({
+        messages: {
+            default: "Verificá que este campo este completo o los datos ingresados sean válidos",
+
+        }
+    })
+
     const [data, setData] = useState({
 
     });
+    const [isSubmited, setIsSubmited] = useState(false)
     const { cartItems, setDisplayCart, total } = useContext(CartContext)
     const [selectedCity, setSelectedCity] = useState()
+    const [order, setOrder] = useState()
+
     // const [orderId, setOrderId] = useState();
     // const [itemsComprados, setItemsComprados] = useState()
 
@@ -50,18 +62,28 @@ export default function CheckOut() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setData({ ...data, [name]: value })
-        console.log(data)
+    }
+
+
+
+    const handleSubmit = (e) => {
+        setIsSubmited(true)
+        e.preventDefault();
+        setData({ ...data, "Provincia": selectedCity.name })
 
     }
 
-    const handleSubmit = (e) => {
+    const handleNextStep = (e) => {
+        setIsSubmited(true)
         e.preventDefault();
         setData({ ...data, "Provincia": selectedCity.name })
-        const order = {
-            datosdelComprador: data,
-            productos: cartItems,
+        if (validator.allValid()) {
+            setOrder({
+                datosdelComprador: data,
+                productos: cartItems,
+            })
+            setVisible(true)
         }
-        console.log(order)
     }
 
     useEffect(() => {
@@ -72,41 +94,49 @@ export default function CheckOut() {
         <div className="checkout-container">
             <form onSubmit={handleSubmit} className="formulario">
                 <div className="formulario-datospersonales">
+                    {isSubmited && validator.showMessages()}
                     <h2>Tus Datos</h2>
                     <div className="input-container">
-                        <label className={data.nombre && "filled"}>Nombre</label>
+                        <label className={data.Nombre && "filled"}>Nombre</label>
                         <input
-                            name="nombre"
+                            name="Nombre"
                             type="text"
-                            onChange={handleChange} />
+                            onChange={handleChange}
+                        />
 
+                        {validator.message('Nombre', data.Nombre, "required|alpha")}
                     </div>
                     <div className="input-container">
-                        <label className={data.apellido && "filled"}>
+                        <label className={data.Apellido && "filled"}>
                             Apellido
                         </label>
                         <input
-                            name="apellido"
+                            name="Apellido"
                             type="text"
-                            onChange={handleChange} />
+                            onChange={handleChange}
+                            onBlur={() => console.log("blur")}
+                        />
+                        {validator.message('Apellido', data.Apellido, "required|alpha")}
                     </div>
                     <div className="input-container">
-                        <label className={data.email && "filled"}>
+                        <label className={data.Email && "filled"}>
                             Email
                         </label>
                         <input
-                            name="email"
+                            name="Email"
                             type="email"
                             onChange={handleChange} />
+                        {validator.message('Email', data.Email, "required|Email")}
                     </div>
                     <div className="input-container">
-                        <label className={data.telefono && "filled"}>
+                        <label className={data.Teléfono && "filled"}>
                             Teléfono
                         </label>
                         <input
-                            name="telefono"
+                            name="Teléfono"
                             type="tel"
                             onChange={handleChange} />
+                        {validator.message('Teléfono', data.Teléfono, "required|min:10")}
                     </div>
                 </div>
                 <div className="formulario-datosenvio">
@@ -114,44 +144,49 @@ export default function CheckOut() {
                     <div >
                         <Dropdown value={selectedCity} onChange={(e) => setSelectedCity(e.value)} options={ciudades} optionLabel="name"
                             placeholder="Provincia" className="w-full md:w-14rem" />
+                        {validator.message('Provincia', selectedCity, "required")}
                     </div>
                     <div className="input-container">
-                        <label className={data.localidad && "filled"}>
-                            Localidad
+                        <label className={data.Localidad && "filled"}>
+                            Localidad / Barrio
                         </label>
                         <input
-                            name="localidad"
+                            name="Localidad"
                             type="text"
                             onChange={handleChange} />
+                        {validator.message('Localidad', data.Localidad, "required|alpha_space")}
                     </div>
                     <div className=" inputs-adress">
                         <div className="input-container">
-                            <label className={data.direccion && "filled"}>
+                            <label className={data.Dirección && "filled"}>
                                 Dirección
                             </label>
                             <input
-                                name="direccion"
+                                name="Dirección"
                                 type="text"
                                 onChange={handleChange} />
+                            {validator.message('Dirección', data.Dirección, "required|alpha_num_space")}
                         </div>
                         <div className="input-container">
-                            <label className={data.timbre && "filled"}>
+                            <label className={data.Timbre && "filled"}>
                                 Depto
                             </label>
                             <input
-                                name="timbre"
+                                name="Timbre"
                                 type="text"
                                 onChange={handleChange} />
+
                         </div>
 
                         <div className="input-container">
-                            <label className={data.cp && "filled"}>
+                            <label className={data.CódigoPostal && "filled"}>
                                 Código Postal
                             </label>
                             <input
-                                name="cp"
+                                name="CódigoPostal"
                                 type="text"
                                 onChange={handleChange} />
+                            {validator.message('CódigoPostal', data.CódigoPostal, "required")}
                             <a href="https://www.correoargentino.com.ar/formularios/cpa" rel="noreferrer" target="_blank" className="conocer-cp">
                                 No sé mi código postal
                             </a>
@@ -179,8 +214,43 @@ export default function CheckOut() {
                     <h2>{peso.format(total())}</h2>
                 </div>
                 <button className="checkout-btn"
-                    type="submit" onClick={handleSubmit}>COMPRAR</button>
+                    type="submit" onClick={handleNextStep}>COMPRAR</button>
             </div>
+            <Modal visible={visible} setVisible={setVisible} order={order ? order.datosdelComprador : ""} handleSubmit={handleSubmit} />
+        </div>
+    )
+}
+
+
+
+import { Dialog } from 'primereact/dialog';
+
+function Modal({ visible, setVisible, order, handleSubmit }) {
+
+
+    return (
+        <div className="card flex justify-content-center">
+
+            <Dialog header="Verifique que los siguientes datos sean correctos" visible={visible} onHide={() => setVisible(false)}
+                style={{ width: '50vw' }} breakpoints={{ '960px': '75vw', '641px': '100vw' }}>
+                <div className="m-0">
+
+                    {order && Object.keys(order).map((value, i) => {
+                        return <p key={i} className="check-order-data">
+                            {value} : {order[value]}
+                        </p>
+                    })
+                    }
+                </div>
+                <div className="checkout-modal-btns">
+                    <button onClick={() => setVisible(false)}>
+                        MODIFICAR
+                    </button>
+                    <button onClick={handleSubmit}>
+                        FINALIZAR
+                    </button>
+                </div>
+            </Dialog>
         </div>
     )
 }

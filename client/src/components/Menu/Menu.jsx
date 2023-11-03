@@ -14,18 +14,19 @@ export default function BasicDemo() {
         },
         {
             label: 'Selecciones',
-            url: "/products/search/SELECCIONES"
+            url: "/products/SELECCIONES"
         },
         {
             label: "Retro",
-            url: "/products/search/RETRO",
+            url: "/products/RETRO",
         },
         {
             label: "Actuales",
-            url: "/products/search/ACTUAL",
+            url: "/products/ACTUAL",
         },
         {
-            label: "Guía de talles"
+            label: "Guía de talles",
+            url: "/guiadetalles"
         },
         {
             label: < SearchBar />

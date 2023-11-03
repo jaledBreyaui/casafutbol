@@ -29,8 +29,8 @@ export default class MultipleItems extends Component {
                 {
                     breakpoint: 1024,
                     settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4
+                        slidesToShow: 3,
+                        slidesToScroll: 3
                     }
                 },
                 {
@@ -42,6 +42,7 @@ export default class MultipleItems extends Component {
                 }
             ]
         };
+        console.log(this.props)
         return (
             <section className="carousel-section">
                 <h2 className="carousel-section-title">{this.props.section}</h2>

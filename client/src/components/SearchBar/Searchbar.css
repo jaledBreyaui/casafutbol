@@ -33,8 +33,25 @@
 
 .searchbar>i {
     z-index: 1;
-    color: #4f5b66;
+    color: #FFF;
     background: transparent;
     border: none;
     position: absolute;
+}
+
+.searchbar-responsive {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.searchbar-responsive>i {
+    font-size: 2rem !important;
+}
+
+
+.searchbar-responsive>input {
+    color: black;
 }

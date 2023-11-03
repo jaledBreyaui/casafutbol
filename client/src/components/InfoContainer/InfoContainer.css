@@ -1,0 +1,48 @@
+.info-container {
+    display: flex;
+    justify-content: center;
+    gap: -15%;
+    text-align: center;
+    padding: 4%;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    gap: 5%;
+    flex-grow: 1;
+}
+
+.info:nth-child(2) {
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.info>p {
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+.info>i {
+    font-size: 40px;
+}
+
+@media screen and (max-width:1000px) {
+    .info>i {
+        font-size: 35px;
+    }
+
+    .info>p {
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        font-size: 17px;
+    }
+}
+
+.info-slider {
+    margin: 8%;
+}

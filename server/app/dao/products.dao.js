@@ -17,10 +17,17 @@ class ProductsDao {
         }
     }
 
-    async getAll() {
+    async getAll(page) {
+        let limit = 12;
+        let skip = (page - 1) * limit
         try {
-            const prod = await Product.find({})
-            return prod
+            if (page === undefined) {
+                const prod = await Product.find({})
+                return prod
+            }
+            const totalItems = await Product.count({})
+            const prod = await Product.find({}).skip(skip).limit(12)
+            return { prod: prod, totalItems: totalItems }
         } catch (error) {
             console.log(error)
             return error
@@ -37,18 +44,33 @@ class ProductsDao {
     }
 
 
-    async getByCategory(category) {
+    async getByCategory(category, page) {
+        let limit = 12;
+        let skip = (page - 1) * limit
         try {
-            const prod = await Product.find({ "category": category })
-            return prod
+            const totalItems = await Product.count({ "category": { $regex: category } })
+            const prod = await Product.find({ "category": { $regex: category } }).skip(skip).limit(12)
+            return { prod: prod, totalItems: totalItems }
         } catch (error) {
             return error
         }
     }
+
+    async getByTeam(team, page) {
+        let limit = 12;
+        let skip = (page - 1) * limit
+        try {
+            const totalItems = await Product.count({ "team": team })
+            const prod = await Product.find({ "team": team }).skip(skip).limit(12)
+            return { prod: prod, totalItems: totalItems }
+        } catch (error) {
+            return error
+        }
+    }
+
     async delete() {
         try {
-            const products = await Product.deleteMany({ categories: { $all: ["actuales"] } })
-            console.log(products)
+            const products = await Product.deleteMany({})
             return products
         } catch (error) {
             return error

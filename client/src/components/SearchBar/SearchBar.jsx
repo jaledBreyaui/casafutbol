@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Searchbar.css"
-export default function SearchBar() {
+export default function SearchBar({ className, setVisible }) {
     const ref = useRef()
     const navigate = useNavigate()
     const [search, setSearch] = useState()
@@ -15,6 +15,7 @@ export default function SearchBar() {
         if (search.length > 1) {
             navigate(`/products/search/${search.toUpperCase()}`)
             setSearch('')
+            setVisible(false)
         }
     }
 
@@ -33,10 +34,11 @@ export default function SearchBar() {
     }, [ref])
 
     return (
-        <div className="searchbar" ref={ref} onMouseOver={() => setExpand(true)}>
+        <div className={className ? "searchbar-responsive" : "searchbar"} ref={ref} onMouseOver={() => setExpand(true)}>
             <i onClick={handleClick}
+
                 className="pi pi-search"
-                style={{ fontSize: '1.5rem', color: "#FFF" }} ></i>
+                style={{ fontSize: '1.5rem' }} ></i>
             <input
                 className={expand ? "search-input search-expanded" : "search-input"}
                 placeholder="Buscar" onChange={handleInput} value={search} />

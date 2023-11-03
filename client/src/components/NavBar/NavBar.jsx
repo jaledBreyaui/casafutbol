@@ -1,12 +1,15 @@
 import Menu from "../Menu/Menu";
+import MenuResponsive from "../MenuResponsive/MenuResponsive";
 import 'primereact/resources/themes/bootstrap4-light-blue/theme.css'
 import 'primereact/resources/primereact.min.css'
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./Navbar.css"
+import { useWidth } from "../../hooks/useWidth";
 
 export default function NavBar() {
     const [navbar, setNavbar] = useState(false)
+    const { width } = useWidth()
     const location = useLocation()
     const changeBackground = () => {
         if (location.pathname !== "/") {
@@ -21,6 +24,7 @@ export default function NavBar() {
         }
     }
     useEffect(() => {
+        console.log(width)
         changeBackground()
         // adding the event when scroll change background
         window.addEventListener("scroll", changeBackground)
@@ -28,6 +32,7 @@ export default function NavBar() {
         return () => {
             window.removeEventListener("scroll", changeBackground)
         }
+
     })
 
     return (
@@ -37,7 +42,7 @@ export default function NavBar() {
                 :
                 <div></div>}
             <div className="navbar-bottom">
-                <Menu />
+                {width > 1000 ? <Menu /> : <MenuResponsive />}
             </div>
         </div>
     )

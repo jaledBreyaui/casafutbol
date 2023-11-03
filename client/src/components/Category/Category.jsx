@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom"
 import { useState } from 'react';
+import "./Category.css"
 
 
 export default function Category({ category }) {
@@ -10,7 +11,7 @@ export default function Category({ category }) {
         <div
             onMouseEnter={() => setMouse(false)}
             onMouseLeave={() => setMouse(true)}
-            className='' >
+            className='category' >
             <Link className='category-title-container' to={"/products/" + category.link}>
                 <div className='category-image' style={{
                     backgroundImage: `url(${mouse ? category.src : category.srcAlt})`

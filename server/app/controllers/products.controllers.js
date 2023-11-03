@@ -4,7 +4,8 @@ const fs = require('fs')
 
 const getProducts = async (req, res) => {
     try {
-        const products = await mongo.getAll()
+        let page = req.query.page
+        const products = await mongo.getAll(page)
         res.json(products)
     } catch (error) {
         return error
@@ -22,11 +23,12 @@ const getProductById = async (req, res) => {
 
 }
 
-const deleteActuales = async (req, res) => {
+const getProductsByTeam = async (req, res) => {
     try {
-        const deleted = await mongo.delete()
-        console.log(deleted)
-        res.json(deleted)
+        const { team } = req.params
+        let page = req.query.page
+        const products = await mongo.getByTeam(team, page)
+        res.json(products)
     } catch (error) {
         return error
     }
@@ -35,7 +37,13 @@ const deleteActuales = async (req, res) => {
 const getProductsByCategory = async (req, res) => {
     try {
         const { category } = req.params
-        const productsByCategory = await mongo.getByCategory(category)
+        let page = req.query.page
+        const capitalized = category.split(" ").map((word) => {
+            const firstLetter = word.charAt(0).toUpperCase();
+            const rest = word.slice(1).toLowerCase();
+            return firstLetter + rest;
+        }).join(" ")
+        const productsByCategory = await mongo.getByCategory(capitalized, page)
         res.json(productsByCategory)
     } catch (error) {
         return error
@@ -45,6 +53,5 @@ const getProductsByCategory = async (req, res) => {
 module.exports = {
     getProducts,
     getProductById,
-    deleteActuales,
-    getProductsByCategory
+    getProductsByCategory, getProductsByTeam
 }

@@ -8,7 +8,7 @@ export default function CartIcon() {
     const location = useLocation()
     return (
         <div className={location.pathname.includes("checkout") ? "hideCartIcon" : "cartIcon"} >
-            <i onClick={() => setDisplayCart(true)} className="pi pi-shopping-cart" style={{ color: 'white', fontSize: "1.5rem" }}></i>
+            <i onClick={() => setDisplayCart(true)} className="pi pi-shopping-cart" style={{ color: 'white' }}></i>
             {cartItems.length > 0 && <span className="cart-icon-quant">{cartItems.length}</span>}
         </div>
     )

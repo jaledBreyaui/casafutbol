@@ -19,8 +19,8 @@ export function ProductsProvider({ children }) {
                 throw new Error('Could not fetch products')
             }
             const data = await response.json()
+            console.log(data)
             setProducts(addPrice(data))
-            localStorage.setItem("productosLocal", JSON.stringify(products))
         } catch (error) {
             console.log(error)
             return error

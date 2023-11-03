@@ -8,7 +8,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 1%;
+    width: 100%;
 }
 
 .footer-top {

@@ -3,8 +3,10 @@ import { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../../context/CartContext';
 import "./Item.css"
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
+import { ProgressSpinner } from 'primereact/progressspinner';
 
-export default function Item({ prod }) {
+
+export default function Item({ prod, loading }) {
 
     const { addItem } = useContext(CartContext)
     const [size, setSize] = useState()
@@ -30,11 +32,12 @@ export default function Item({ prod }) {
     })
     return (
         <div className='item'>
+            {loading && <ProgressSpinner />}
             <Breadcrumbs item={breadcrumb} />
             <div className='item-image'>
-                {/* <img src={'http://localhost:3001' + prod.path} /> */}
+                <img src={'http://localhost:3001/' + prod.path} />
 
-                <img src={'https://casafutbol-production.up.railway.app/' + prod.path} />
+                {/* <img src={'https://casafutbol-production.up.railway.app/' + prod.path} /> */}
             </div>
             <div className='item-info'>
                 <div>
@@ -74,5 +77,5 @@ function ItemSizeStock({ stock, setSize }) {
     )
 }
 Item.propTypes = {
-    prod: PropTypes.object,
+    prod: PropTypes.object.isRequired,
 }

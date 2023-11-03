@@ -1,5 +1,5 @@
 .checkout-container {
-    margin-top: 8%;
+    margin-top: 150px;
     padding: 0 5%;
     display: flex;
     flex-direction: row;
@@ -176,4 +176,79 @@
     width: 100%;
     padding: 3%;
 
+}
+
+.error {
+    border: 10px solid red;
+}
+
+.srv-validation-message {
+    color: red;
+    margin-top: 1%
+}
+
+.check-order-data {
+    margin: 4% 1%;
+}
+
+.checkout-modal-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 25px;
+
+}
+
+.checkout-modal-btns>button {
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 15px;
+    font-weight: 1000;
+}
+
+.checkout-modal-btns>button:nth-child(1) {
+    background-color: rgb(221, 4, 4);
+}
+
+.checkout-modal-btns>button:nth-child(1):hover {
+    color: white;
+}
+
+.checkout-modal-btns>button:nth-child(2) {
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+
+}
+
+.checkout-modal-btns>button:nth-child(2):hover {
+    color: gray;
+}
+
+@media screen and (max-width:1000px) {
+    .checkout-container {
+        flex-direction: column;
+    }
+
+    .formulario {
+        width: 100%;
+    }
+
+    .inputs-adress {
+        flex-direction: column;
+    }
+
+    .inputs-adress>div {
+        min-width: 200px;
+    }
+
+    .checkout-items {
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
 }
