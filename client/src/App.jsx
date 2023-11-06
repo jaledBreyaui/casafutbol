@@ -19,9 +19,9 @@ function App() {
       <ProductsProvider>
         <FiltersProvider>
           <CartProvider>
-            <NavBar />
-            <Cart />
             <ScrollToTop>
+              <NavBar />
+              <Cart />
               <Routes>
                 <Route exact path="/" element={<HomePage />} />
                 <Route exact path="/guiadetalles" element={<GuiaDeTalles />} />
@@ -33,8 +33,8 @@ function App() {
                 <Route exact path="/checkout/start" element={<CheckOut />} />
                 <Route exact path="/checkout/end" element={<FinalCheckOut />} />
               </Routes>
+              <Footer />
             </ScrollToTop>
-            <Footer />
           </CartProvider >
         </FiltersProvider>
       </ProductsProvider>

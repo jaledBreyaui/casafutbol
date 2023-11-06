@@ -33,8 +33,6 @@ function ProductListContainer() {
         try {
             if (category === undefined && team === undefined) {
                 const response = await fetch(`${server}/products/?page=${currentPage}`)
-                // const response = await fetch(`https://casafutbol-production.up.railway.app/products/?page=${currentPage}`)
-
                 if (!response.ok) {
                     throw new Error('Could not fetch products')
                 }
@@ -43,10 +41,7 @@ function ProductListContainer() {
                 setProductsLength(data.totalItems)
             }
             if (category) {
-                // const response = await fetch(`http://localhost:3001/products-category/${category.toUpperCase()}/?page=${currentPage}`)
                 const response = await fetch(`${server}/products-category/${category.toUpperCase()}/?page=${currentPage}`)
-
-
                 if (!response.ok) {
                     throw new Error('Could not fetch products')
                 }
@@ -55,9 +50,7 @@ function ProductListContainer() {
                 setProductsLength(data.totalItems)
             }
             if (team) {
-                // const response = await fetch(`http://localhost:3001/products-team/${team.toUpperCase()}/?page=${currentPage}`)
                 const response = await fetch(`${server}/products-team/${team.toUpperCase()}/?page=${currentPage}`)
-
                 if (!response.ok) {
                     throw new Error('Could not fetch products')
                 }
@@ -66,7 +59,6 @@ function ProductListContainer() {
                 setProductsLength(data.totalItems)
             }
             if (search) {
-                // const response = await fetch(`http://localhost:3001/products`)
                 const response = await fetch(`${server}/products`)
                 if (!response.ok) {
                     throw new Error('Could not fetch products')

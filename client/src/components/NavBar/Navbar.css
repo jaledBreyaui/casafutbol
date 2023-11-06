@@ -38,9 +38,7 @@
     align-items: center;
 }
 
-.navbar-bottom {
-    gap: 20px;
-}
+.navbar-bottom {}
 
 .navbar-bottom>div {
     flex-grow: 2;

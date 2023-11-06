@@ -31,7 +31,7 @@
 }
 
 @media screen and (max-width:800px) {
-    .breadcrumb {
+    .breadcrumb-item {
         margin: 0% 5%;
         text-align: right;
 

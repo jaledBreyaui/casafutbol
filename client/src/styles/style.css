@@ -29,11 +29,17 @@ a {
     transition: .5s;
 }
 
+
+html {
+    overflow-x: hidden !important;
+
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: var(--white);
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 
@@ -198,7 +204,7 @@ body {
     display: grid;
     gap: 2px;
     width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(17%, 1fr));
     column-gap: 2%;
     justify-items: center;
 
@@ -296,7 +302,7 @@ body {
     }
 
     .product-list-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
     }
 }
 
@@ -310,7 +316,7 @@ body {
         display: grid;
         gap: 2px;
         width: 100%;
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(35%, 1fr));
         column-gap: 2%;
         padding: .5px;
         justify-items: center;

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 export default function Product({ prod, className }) {
     const server = import.meta.env.PROD ? "https://casafutbol-production.up.railway.app" : " http://localhost:3001"
     const peso = new Intl.NumberFormat('es-AR', {
@@ -11,7 +12,12 @@ export default function Product({ prod, className }) {
         <div className={className} >
             <Link to={"/item/" + prod._id}>
                 <div className=''>
-                    <img src={`${server}` + prod.path} className='product-image' />
+                    <LazyLoadImage
+                        alt='Product-image'
+                        src={`${server}` + prod.path}
+                        className='product-image'
+                    />
+                    <img />
                 </div>
             </Link>
             <div className='product-card-description'>
