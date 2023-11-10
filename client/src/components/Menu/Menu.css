@@ -1,3 +1,7 @@
+*:focus {
+    box-shadow: none !important;
+}
+
 .p-menubar {
     display: flex;
     justify-content: space-between;

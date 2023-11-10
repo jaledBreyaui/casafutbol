@@ -1,0 +1,16 @@
+.modal-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.modal-container>p:hover {
+    text-decoration: underline;
+}
+
+
+
+.p-dialog .p-dialog-header .p-dialog-header-icon:focus {
+    box-shadow: none;
+}

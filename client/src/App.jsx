@@ -11,7 +11,7 @@ import ScrollToTop from "./assets/scrollToTop"
 import Cart from "./components/Cart/Cart"
 import CheckOut from "./components/CheckOut/CheckOut"
 import FinalCheckOut from "./views/FinalCheckOut"
-import GuiaDeTalles from "./views/GuiaDeTalles"
+
 
 function App() {
   return (
@@ -24,7 +24,6 @@ function App() {
               <Cart />
               <Routes>
                 <Route exact path="/" element={<HomePage />} />
-                <Route exact path="/guiadetalles" element={<GuiaDeTalles />} />
                 <Route exact path="/item/:id" element={<ItemDetail />} />
                 <Route exact path="/products/" element={<ProductListContainer />} />
                 <Route exact path="/products/:category" element={<ProductListContainer />} />

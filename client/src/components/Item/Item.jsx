@@ -4,12 +4,14 @@ import { CartContext } from '../../context/CartContext';
 import "./Item.css"
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 import { ProgressSpinner } from 'primereact/progressspinner';
-
+import ModalContainer from '../ModalContainer/ModalContainer';
 
 export default function Item({ prod, loading }) {
     const server = import.meta.env.PROD ? "https://casafutbol-production.up.railway.app" : " http://localhost:3001"
     const { addItem } = useContext(CartContext)
     const [size, setSize] = useState()
+    const [showGuide, setShowGuide] = useState()
+    const [showMethods, setShowMethods] = useState()
     const [breadcrumb, setBreadcrumb] = useState({
         title: "",
         generalCategory: "",
@@ -23,6 +25,8 @@ export default function Item({ prod, loading }) {
         })
 
     }, [prod])
+
+
 
 
     const peso = new Intl.NumberFormat('es-AR', {
@@ -41,15 +45,27 @@ export default function Item({ prod, loading }) {
                 <div>
                     <p className="product-title">{prod.title}</p>
                     <span className='item-info-price'>{peso.format(prod.price)}</span>
-                    <p>Ver medios de pago <span><i className={"pi pi-credit-card"} style={{ fontSize: '20px' }}></i></span></p>
+                    <ModalContainer
+                        setShowGuide={setShowMethods}
+                        showGuide={showMethods}
+                        header={"Métodos de Pago"}
+                        content={<p>-Transferencia bancaria</p>}
+                        icon={"pi pi-credit-card"}
+                    />
                 </div>
                 <div className='item-stock'>
                     <div className='item-stock-size'>
                         <p>Talle : <strong>{size}</strong></p>
-                        <p>{ } disponibes </p>
+                        <p>{size ? prod.stock[size.toLowerCase()] : ""} disponibes </p>
                     </div>
                     < ItemSizeStock stock={prod.stock} setSize={setSize} />
-                    <p>Guía de talles <i className='pi pi-angle-down' style={{ fontSize: '20px' }}></i></p>
+                    <ModalContainer
+                        setShowGuide={setShowGuide}
+                        showGuide={showGuide}
+                        header={"Guía de talles"}
+                        content={<img src="/imgs/guiaDeTalles.jpg" className="talles-image" />}
+                        icon={'pi pi-angle-down'}
+                    />
                 </div>
                 <button onClick={() => { addItem(prod, size) }}
                     className="addtocart-btn"

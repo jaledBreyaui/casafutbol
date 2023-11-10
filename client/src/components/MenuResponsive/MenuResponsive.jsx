@@ -5,11 +5,13 @@ import logo from '/imgs/logopng.png'
 import { Link } from "react-router-dom";
 import CartIcon from "../CartIcon/CartIcon"
 import SearchBar from "../SearchBar/SearchBar";
-
+// import ModalWindow from "../ModalWindow/ModalWindow";
+import ModalContainer from "../ModalContainer/ModalContainer";
 
 export default function MenuResponsive() {
 
     const [visible, setVisible] = useState(false);
+    const [showGuide, setShowGuide] = useState();
     const items = [
         {
             label: 'Camisetas',
@@ -26,10 +28,6 @@ export default function MenuResponsive() {
         {
             label: "Actuales",
             url: "/products/ACTUAL",
-        },
-        {
-            label: "Guía de talles",
-            url: "/guiadetalles"
         }]
 
     return (
@@ -39,8 +37,14 @@ export default function MenuResponsive() {
                     {items.map((item, i) => {
                         return <MenuItem key={i} label={item.label} link={item.url} setVisible={setVisible} />
                     })}
+                    <ModalContainer
+                        showGuide={showGuide}
+                        setShowGuide={setShowGuide}
+                        header={"Guía de Talles"}
+                        content={<img src="/imgs/guiaDeTalles.jpg" className="talles-image" />}
+                        icon={'pi pi-angle-down'}
+                    />
                     <SearchBar className={"searchbar-resposive-menu"} setVisible={setVisible} />
-
                 </div>
             </Sidebar>
             <div className="responsive-navbar">
@@ -48,7 +52,7 @@ export default function MenuResponsive() {
                 <Link to="/" ><img src={logo} alt="" id="logo" /></Link>
                 <CartIcon />
             </div>
-        </div>
+        </div >
     )
 }
 

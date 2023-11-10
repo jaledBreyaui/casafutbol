@@ -28,6 +28,7 @@ function ProductListContainer() {
             category: category ? category : "no"
         })
     }, [category, search])
+
     const fetchProducts = async () => {
         setLoading(true)
         try {
@@ -78,6 +79,7 @@ function ProductListContainer() {
     useEffect(() => {
         fetchProducts()
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+        console.log(category)
     }, [currentPage, search, setProducts, category, team])
 
 

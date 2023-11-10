@@ -5,8 +5,13 @@ import SearchBar from '../SearchBar/SearchBar'
 import { Link } from "react-router-dom";
 import logo from '/imgs/logopng.png'
 import CartIcon from "../CartIcon/CartIcon";
+import { useState } from "react";
+import ModalContainer from "../ModalContainer/ModalContainer";
+
+
 
 export default function BasicDemo() {
+    const [showGuide, setShowGuide] = useState(false);
     const items = [
         {
             label: 'Camisetas',
@@ -25,8 +30,13 @@ export default function BasicDemo() {
             url: "/products/ACTUAL",
         },
         {
-            label: "Guía de talles",
-            url: "/guiadetalles"
+            label: <ModalContainer
+                showGuide={showGuide}
+                setShowGuide={setShowGuide}
+                header={"Guía de Talles"}
+                content={<img src="/imgs/guiaDeTalles.jpg" className="talles-image" />}
+                icon={'pi pi-angle-down'}
+            />,
         },
         {
             label: < SearchBar />

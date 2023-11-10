@@ -14,8 +14,6 @@ export default function CategoryContainer({ categories }) {
         slidesToScroll: 1,
         autoplay: false,
         speed: 800,
-
-
         arrows: true,
         dragable: true,
 

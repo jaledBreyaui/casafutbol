@@ -1,12 +1,11 @@
-// pi-sliders-h
+
 import { useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
-// import { ProductsContext } from "../../context/ProductsContext";
+
 
 export default function SideMenu() {
     const [visibleLeft, setVisibleLeft] = useState(false);
-    // const allProducts = useContext(ProductsContext);
-    // Manga larga corta estampada  producto agotado ¿¿filtrar por talles?? y que aparezcan arriba las fotos buenas//
+
     const categories = ["Camisetas", "Retro", "Actuales", "Selecciones", "Titular", "Suplente", "Tercera Equipación"]
     return (
         <div className="side-menu-container">

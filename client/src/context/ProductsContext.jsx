@@ -20,7 +20,7 @@ export function ProductsProvider({ children }) {
             }
             const data = await response.json()
             console.log(data)
-            setProducts(addPrice(data))
+            setProducts(data)
         } catch (error) {
             console.log(error)
             return error
@@ -29,18 +29,7 @@ export function ProductsProvider({ children }) {
             setLoading(false)
         }
     };
-    const addPrice = (products) => {
-        let productsWithPrice = products.map((prod) => {
-            let price = 0;
-            if (prod.category.includes("Retro")) { price = 26000; }
-            if (prod.category.includes("Actual")) { price = 23000; }
-            if (prod.tags.includes("LARGA")) { price = 28000; }
-            if (prod.tags.includes("ESTAMPADA")) { price = 27000; }
-            prod.price = price;
-            return prod
-        })
-        return productsWithPrice
-    }
+
     useEffect(() => {
         fetchProducts();
     }, [])

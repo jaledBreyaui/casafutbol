@@ -70,6 +70,11 @@
         padding: 10px;
         font-size: 17px;
     }
+
+    .homepage-image {
+        background-position: center right;
+        filter: brightness(70%) blur(0px);
+    }
 }
 
 
@@ -77,4 +82,6 @@
     .header-title {
         font-size: 25px;
     }
+
+
 }

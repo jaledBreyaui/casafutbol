@@ -18,6 +18,10 @@
     font-weight: 600;
 }
 
+.breadcrumb>div>p {
+    font-weight: 600;
+}
+
 .breadcrumb>div>a:hover {
     text-decoration: underline;
 }
@@ -33,11 +37,9 @@
 @media screen and (max-width:800px) {
     .breadcrumb-item {
         margin: 0% 5%;
-        text-align: right;
-
+        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-
     }
 
     .breadcrumb>div {
@@ -45,23 +47,10 @@
     }
 
     .breadcrumb>div>a {
-        font-size: 12px
+        font-size: 14px
     }
 }
 
 
 
-@media screen and (max-width:550px) {
-    .lastcrumb-div {
-        width: 50%;
-        white-space: nowrap;
-        overflow: hidden;
-        direction: rtl;
-        text-align: center
-    }
-
-    .lastcrumb {
-        /* hide text when we have more than N lines */
-        text-overflow: ellipsis;
-    }
-}
+@media screen and (max-width:550px) {}

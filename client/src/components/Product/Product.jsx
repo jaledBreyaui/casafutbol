@@ -1,3 +1,4 @@
+
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
@@ -8,9 +9,18 @@ export default function Product({ prod, className }) {
         currency: 'ARS',
         minimumFractionDigits: 0
     })
+
+    const handleOutOfStock = () => {
+        if (prod.stock.s === 0 && prod.stock.m === 0 && prod.stock.l === 0 && prod.stock.xl === 0) {
+            return true
+        }
+    }
+
+
+
     return (
-        <div className={className} >
-            <Link to={"/item/" + prod._id}>
+        <div className={handleOutOfStock() ? className + " outofstock" : className} >
+            <Link to={"/item/" + prod._id} >
                 <div className=''>
                     <LazyLoadImage
                         alt='Product-image'
@@ -18,6 +28,7 @@ export default function Product({ prod, className }) {
                         className='product-image'
                     />
                     <img />
+
                 </div>
             </Link>
             <div className='product-card-description'>

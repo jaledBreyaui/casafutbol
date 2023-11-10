@@ -20,11 +20,9 @@ export default function NavBar() {
             } else {
                 setNavbar(false)
             }
-
         }
     }
     useEffect(() => {
-        console.log(width)
         changeBackground()
         // adding the event when scroll change background
         window.addEventListener("scroll", changeBackground)
