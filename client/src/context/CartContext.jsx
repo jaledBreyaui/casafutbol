@@ -58,11 +58,12 @@ export function CartProvider({ children }) {
     const total = () => {
         const total = []
         cartItems.map((prod) => {
-            total.push(prod.price)
+            total.push(Number(prod.price))
         })
         let add = (acc, a) => {
             return acc + a
         }
+
         return total.reduce(add, 0)
     }
 

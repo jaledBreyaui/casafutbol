@@ -27,7 +27,7 @@ export default function Cart() {
                 <div className='cart-total'>
                     <div>
                         <p> Envio:</p>
-                        <p><strike>$1600</strike> Gratis</p>
+                        <p><strike>$3600</strike> Gratis</p>
                     </div>
                     <div>
                         <p> Total:</p>

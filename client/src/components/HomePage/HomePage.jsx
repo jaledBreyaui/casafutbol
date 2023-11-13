@@ -51,8 +51,8 @@ export default function HomePage() {
     })
 
     return (
-        <div className="homepage">
-            <div className="homepage-header">
+        <main className="homepage">
+            <section className="homepage-header">
                 <div className="homepage-image"></div>
                 <div className="homepage-text">
                     <p className="header-title">Conocé Todos Nuestros Productos</p>
@@ -60,10 +60,11 @@ export default function HomePage() {
                         <button className="header-button" >Visitá nuestro catálogo</button>
                     </Link>
                 </div>
-            </div>
+            </section>
             <InfoContainer />
+            <p className="category-section-title">Explorá nuestras categorias</p>
             <CategoryContainer categories={categories} />
             <ItemSliderContainer sectionName={"Recomendaciones"} products={recomendados} />
-        </div >
+        </main >
     );
 }

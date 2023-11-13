@@ -8,21 +8,19 @@ export default class MultipleItems extends Component {
     render() {
         const settings = {
             dots: true,
-            infinite: false,
             slidesToShow: 6,
-            swipeToSlide: true,
-            slidesToScroll: 5,
+            slidesToScroll: 6,
+            initialSlide: 1,
             autoplay: false,
             speed: 700,
-            autoplaySpeed: 4000,
-            cssEase: "linear",
+            loop: true,
+            autoplaySpeed: 5000,
             responsive: [
                 {
                     breakpoint: 1500,
                     settings: {
                         slidesToShow: 4,
                         slidesToScroll: 4,
-                        infinite: true,
                         dots: true
                     }
                 },
@@ -36,8 +34,10 @@ export default class MultipleItems extends Component {
                 {
                     breakpoint: 800,
                     settings: {
+                        initialSlide: 1,
                         slidesToShow: 2,
-                        slidesToScroll: 2
+                        slidesToScroll: 2,
+                        dots: false,
                     }
                 }
             ]
