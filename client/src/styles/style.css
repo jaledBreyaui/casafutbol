@@ -16,7 +16,8 @@
     --violet: rgba(131, 96, 210, 1);
 }
 
-a {
+a,
+*>a {
     text-decoration: none;
 }
 
@@ -325,7 +326,10 @@ body {
     gap: 25px;
 }
 
-
+#pr_id_32 {
+    width: 25rem;
+    padding: 20rem;
+}
 
 /*guia de talles*/
 

@@ -26,6 +26,8 @@ export default function Product({ prod, className }) {
                         alt='Product-image'
                         src={`${server}` + prod.path}
                         className='product-image'
+                        effect='opacity'
+
                     />
                     <img />
 

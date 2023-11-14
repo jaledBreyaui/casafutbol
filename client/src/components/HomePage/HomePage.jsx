@@ -62,7 +62,7 @@ export default function HomePage() {
                 </div>
             </section>
             <InfoContainer />
-            <p className="category-section-title">Explorá nuestras categorias</p>
+            <p className="category-section-title">Explorá nuestras categorías</p>
             <CategoryContainer categories={categories} />
             <ItemSliderContainer sectionName={"Recomendaciones"} products={recomendados} />
         </main >
