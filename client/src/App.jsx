@@ -10,7 +10,7 @@ import { CartProvider } from "./context/CartContext"
 import ScrollToTop from "./assets/scrollToTop"
 import Cart from "./components/Cart/Cart"
 import CheckOut from "./components/CheckOut/CheckOut"
-import FinalCheckOut from "./views/FinalCheckOut"
+import FinalCheckOut from "./components/FinalCheckOut/FinalCheckOut.jsx"
 
 
 function App() {

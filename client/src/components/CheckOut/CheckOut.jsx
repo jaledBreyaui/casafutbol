@@ -53,19 +53,10 @@ export default function CheckOut() {
         { name: "Tucumán" },
     ]
 
-    const peso = new Intl.NumberFormat('es-AR', {
-        style: 'currency',
-        currency: 'ARS',
-        minimumFractionDigits: 0
-    })
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setData({ ...data, [name]: value })
     }
-
-
-
     const handleSubmit = (e) => {
         setIsSubmited(true)
         e.preventDefault();
@@ -211,7 +202,7 @@ export default function CheckOut() {
                 </div>
                 <div className="checkout-total">
                     <h2>Total:</h2>
-                    <h2>{peso.format(total())}</h2>
+                    <h2>{total()}</h2>
                 </div>
                 <button className="checkout-btn"
                     type="submit" onClick={handleNextStep}>COMPRAR</button>

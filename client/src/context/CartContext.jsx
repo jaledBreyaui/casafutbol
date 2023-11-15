@@ -3,7 +3,11 @@ import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 
 export function CartProvider({ children }) {
-
+    const peso = new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: 'ARS',
+        minimumFractionDigits: 0
+    })
     const [cartItems, setCartItems] = useState([])
     const [displayCart, setDisplayCart] = useState(false)
     const showCart = () => {
@@ -64,7 +68,7 @@ export function CartProvider({ children }) {
             return acc + a
         }
 
-        return total.reduce(add, 0)
+        return peso.format(total.reduce(add, 0))
     }
 
     return (
