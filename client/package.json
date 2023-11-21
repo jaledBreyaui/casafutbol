@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "cors": "^2.8.5",
+    "nodemailer": "^6.9.7",
     "primeicons": "^6.0.1",
     "primereact": "^9.6.0",
     "prop-types": "^15.8.1",

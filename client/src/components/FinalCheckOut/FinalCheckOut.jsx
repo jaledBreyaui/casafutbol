@@ -5,18 +5,14 @@ import "./FinalCheckOut.css"
 
 export default function FinalCheckOut() {
     const { cartItems, total } = useContext(CartContext)
-    const peso = new Intl.NumberFormat('es-AR', {
-        style: 'currency',
-        currency: 'ARS',
-        minimumFractionDigits: 0
-    })
+
     return (
-        <main className="checkout-end-container">
-            <section className="checkout-end-header">
+        <section className="checkout-end-container">
+            <div className="checkout-end-header">
                 <h1>¡Gracias por tu compra ya separamos tus productos!</h1>
                 <h4>Seguí los siguientes pasos para abonar tu compra y recibirla</h4>
-            </section>
-            <section className="checkout-info">
+            </div>
+            <div className="checkout-info">
                 <div className="checkout-info-steps">
                     <div className="checkout-info-steps-1">
                         <span>  <i className="pi pi-credit-card" style={{ color: "black", fontSize: "2rem" }}></i></span>
@@ -49,11 +45,16 @@ export default function FinalCheckOut() {
                     }
                     <div className="checkout-total">
                         <h2>Total:</h2>
-                        <h2>{peso.format(total())}</h2>
+                        <h2>{total()}</h2>
+                    </div>
+                    <h2>Tus Datos</h2>
+                    <div>
+
+
                     </div>
                 </div>
 
-            </section>
-        </main >
+            </div>
+        </section >
     )
 }

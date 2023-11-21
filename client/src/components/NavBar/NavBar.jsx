@@ -34,7 +34,7 @@ export default function NavBar() {
     })
 
     return (
-        <div className={navbar ? 'navbar active' : 'navbar inactive'}>
+        <nav className={navbar ? 'navbar active' : 'navbar inactive'}>
             {navbar ?
                 <div className="navbar-detail"><p>ENVÍO GRATIS</p></div>
                 :
@@ -42,6 +42,6 @@ export default function NavBar() {
             <div className="navbar-bottom">
                 {width > 1000 ? <Menu /> : <MenuResponsive />}
             </div>
-        </div>
+        </nav>
     )
 }

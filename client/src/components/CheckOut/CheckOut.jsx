@@ -4,8 +4,19 @@ import { Dropdown } from 'primereact/dropdown';
 import CartItem from "../CartItem/CartItem"
 import "./Checkout.css"
 import SimpleReactValidator from "simple-react-validator"
+import { useNavigate } from "react-router-dom";
+import cities from "../../utils/cities"
+
+
+// service_id : service_tm3zcgt
+
+
+// import FinalCheckOut from "../FinalCheckOut/FinalCheckOut";
 
 export default function CheckOut() {
+
+    const server = import.meta.env.PROD ? "https://casafutbol-production.up.railway.app" : " http://localhost:3001"
+
     const [visible, setVisible] = useState(false);
     const validator = new SimpleReactValidator({
         messages: {
@@ -13,54 +24,36 @@ export default function CheckOut() {
 
         }
     })
-
-    const [data, setData] = useState({
-
-    });
+    const navigate = useNavigate()
+    const [data, setData] = useState({});
     const [isSubmited, setIsSubmited] = useState(false)
     const { cartItems, setDisplayCart, total } = useContext(CartContext)
     const [selectedCity, setSelectedCity] = useState()
     const [order, setOrder] = useState()
-
-    // const [orderId, setOrderId] = useState();
-    // const [itemsComprados, setItemsComprados] = useState()
-
-    // const [precio, setPrecio] = useState();
-    const ciudades = [
-        { name: "Buenos Aires" },
-        { name: "Ciudad Autónoma de Buenos Aires" },
-        { name: "Catamarca" },
-        { name: "Chaco" },
-        { name: "Chubut" },
-        { name: "Córdoba" },
-        { name: "Corrientes" },
-        { name: "Entre Ríos" },
-        { name: "Formosa" },
-        { name: "Jujuy" },
-        { name: "La Pampa" },
-        { name: "La Rioja" },
-        { name: "Mendoza" },
-        { name: "Misiones" },
-        { name: "Neuquén" },
-        { name: "Río Negro" },
-        { name: "Salta" },
-        { name: "San Juan" },
-        { name: "San Luis" },
-        { name: "Santa Cruz" },
-        { name: "Santa Fe" },
-        { name: "Santiago del Estero" },
-        { name: "Tierra del Fuego" },
-        { name: "Tucumán" },
-    ]
+    // const [orderId, setOrderId] = useState()  
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setData({ ...data, [name]: value })
     }
-    const handleSubmit = (e) => {
-        setIsSubmited(true)
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmited(true)
         setData({ ...data, "Provincia": selectedCity.name })
+        navigate("/checkout/end")
+        const response = await fetch(`${server}/orders/neworder`, {
+            method: 'POST',
+            body: JSON.stringify({ order: order }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Could not fetch products')
+        }
+        const result = await response.json();
+        console.log(result)
+        // setOrderId(result.id);
 
     }
 
@@ -70,9 +63,11 @@ export default function CheckOut() {
         setData({ ...data, "Provincia": selectedCity.name })
         if (validator.allValid()) {
             setOrder({
-                datosdelComprador: data,
-                productos: cartItems,
+                buyer: data,
+                products: cartItems,
+                total: total()
             })
+            console.log(order)
             setVisible(true)
         }
     }
@@ -95,7 +90,7 @@ export default function CheckOut() {
                             onChange={handleChange}
                         />
 
-                        {validator.message('Nombre', data.Nombre, "required|alpha")}
+                        {validator.message('Nombre', data.Nombre, "required|alpha_space")}
                     </div>
                     <div className="input-container">
                         <label className={data.Apellido && "filled"}>
@@ -107,7 +102,7 @@ export default function CheckOut() {
                             onChange={handleChange}
                             onBlur={() => console.log("blur")}
                         />
-                        {validator.message('Apellido', data.Apellido, "required|alpha")}
+                        {validator.message('Apellido', data.Apellido, "required|alpha_space")}
                     </div>
                     <div className="input-container">
                         <label className={data.Email && "filled"}>
@@ -117,7 +112,7 @@ export default function CheckOut() {
                             name="Email"
                             type="email"
                             onChange={handleChange} />
-                        {validator.message('Email', data.Email, "required|Email")}
+                        {validator.message('Email', data.Email, "required|email")}
                     </div>
                     <div className="input-container">
                         <label className={data.Teléfono && "filled"}>
@@ -133,7 +128,7 @@ export default function CheckOut() {
                 <div className="formulario-datosenvio">
                     <h2>Datos de Envío</h2>
                     <div >
-                        <Dropdown value={selectedCity} onChange={(e) => setSelectedCity(e.value)} options={ciudades} optionLabel="name"
+                        <Dropdown value={selectedCity} onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name"
                             placeholder="Provincia" className="w-full md:w-14rem" />
                         {validator.message('Provincia', selectedCity, "required")}
                     </div>
@@ -166,9 +161,7 @@ export default function CheckOut() {
                                 name="Timbre"
                                 type="text"
                                 onChange={handleChange} />
-
                         </div>
-
                         <div className="input-container">
                             <label className={data.CódigoPostal && "filled"}>
                                 Código Postal
@@ -182,10 +175,8 @@ export default function CheckOut() {
                                 No sé mi código postal
                             </a>
                         </div>
-
                     </div>
                 </div>
-
             </form>
             <div className="checkout-items">
                 <h2>Tu Pedido</h2>
@@ -207,13 +198,10 @@ export default function CheckOut() {
                 <button className="checkout-btn"
                     type="submit" onClick={handleNextStep}>COMPRAR</button>
             </div>
-            <Modal visible={visible} setVisible={setVisible} order={order ? order.datosdelComprador : ""} handleSubmit={handleSubmit} />
+            <Modal visible={visible} setVisible={setVisible} order={order ? order.buyer : ""} handleSubmit={handleSubmit} />
         </div>
     )
 }
-
-
-
 import { Dialog } from 'primereact/dialog';
 
 function Modal({ visible, setVisible, order, handleSubmit }) {
@@ -223,7 +211,7 @@ function Modal({ visible, setVisible, order, handleSubmit }) {
         <div className="card flex justify-content-center">
 
             <Dialog header="Verifique que los siguientes datos sean correctos" visible={visible} onHide={() => setVisible(false)}
-                style={{ width: '50vw' }} breakpoints={{ '960px': '75vw', '641px': '100vw' }}>
+                breakpoints={{ '960px': '75vw', '641px': '100vw' }}>
                 <div className="m-0">
 
                     {order && Object.keys(order).map((value, i) => {
@@ -245,3 +233,4 @@ function Modal({ visible, setVisible, order, handleSubmit }) {
         </div>
     )
 }
+

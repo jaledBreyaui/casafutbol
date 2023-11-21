@@ -42,20 +42,29 @@
 }
 
 
-
 .checkout-info-order {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-around;
     width: 39%;
-    padding: 20px
+    padding: 20px;
+    gap: 20px
+}
+
+.checkout-info-order>div {
+    padding-bottom: 0;
+}
+
+.checkout-total {
+    border-top: 1px solid black;
 }
 
 @media screen and (max-width:1200px) {
     .checkout-end-container {
-        margin-top: 180px;
+        margin-top: 160px;
         margin-bottom: 5%;
+        justify-content: center;
     }
 
     .checkout-end-header {
@@ -85,6 +94,10 @@
 
 
 @media screen and (max-width:800px) {
+    .checkout-end-container {
+        padding: 20px;
+    }
+
     .checkout-end {
         margin-top: 30%;
         margin-bottom: 5%;
