@@ -16,6 +16,11 @@
     --violet: rgba(131, 96, 210, 1);
 }
 
+a[href^=tel] {
+    text-decoration: inherit;
+    color: inherit;
+}
+
 a,
 *>a {
     text-decoration: none;
