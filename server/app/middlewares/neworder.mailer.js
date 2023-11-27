@@ -1,5 +1,8 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config()
+const hbs = require('nodemailer-express-handlebars');
+const path = require('path')
+
 const transporter = nodemailer.createTransport({
     host: 'smtp-relay.brevo.com',
     port: 587,
@@ -9,24 +12,40 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+const handlebarOptions = {
+    viewEngine: {
+        extName: ".handlebars",
+        partialsDir: path.resolve('./public/views'),
+        defaultLayout: false,
+    },
+    viewPath: path.resolve('./public/views'),
+    extName: ".handlebars",
+}
 
-const newOrderMail = (buyer, products, total) => {
+
+transporter.use('compile', hbs(handlebarOptions));
+
+
+const newOrderMail = (buyer, products, total, id) => {
     const mailOptions = {
         from: 'casafutbolarg@gmail.com',
-        to: buyer.Email,
-        subject: "GRACIAS POR COMPRA",
-        html:
-            `<div> 
-        <h2> Datos del comprador</h2>
-        <p>Nombre y Apellido : ${buyer.Nombre} ${buyer.Apellido}  </p> 
-        <p>Email: ${buyer.Email}</p>  
-        <p>Celular: ${buyer.Teléfono}</p> 
-        <p>Dirección: ${buyer.Dirección} <span>${buyer.Timbre}</span> <span>CP: ${buyer.CódigoPostal}</span></p>  
-        <p>TOTAL: ${total}</p> 
-        </div>`,
+        to: [buyer.Email, "casafutbolarg@gmail.com"],
+        subject: "Compra realizada CasaFutbol",
+        template: 'email',
+        context: {
+            buyer: buyer,
+            products: products,
+            total: total,
+            id: id,
+        },
         attachments: [
-            products
+            {
+                filename: "logopng.png",
+                path: 'public/imgs/logopng.png',
+                cid: 'image'
+            }
         ]
+
     }
         ; (async () => {
             try {

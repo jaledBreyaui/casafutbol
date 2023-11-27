@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            color: black;
+        }
+
+        h1 {
+            width: 100%;
+            text-align: left;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        body>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 2px solid violet;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(128, 128, 128, 0.151);
+        }
+
+        .productos {
+            border-bottom: 1px solid rgba(128, 128, 128, 0.468);
+            padding: 0;
+            width: 100%;
+            font-size: 20px;
+        }
+
+        .total {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .datos {
+            width: 100%;
+            font-size: 20px;
+        }
+
+        img {
+            height: 150px;
+        }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            width: 150px;
+
+        }
+
+        .pasos {
+            width: 100%;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <h1>{{buyer.Nombre}}, Gracias por tu compra</h1>
+        <div class="products-header">
+            <h2>Tu pedido</h2>
+            <h2>Nro de orden: #{{id}}</h2>
+        </div>
+        {{#each products}}
+        <ul class="productos">
+            <li>{{this.title}}</li>
+            <li>Talle:{{this.talleElegido}}</li>
+            <li>Precio:${{this.price}}</li>
+        </ul>
+        {{/each}}
+        <div class="total">
+            <h2>TOTAL: </h2>
+            <h2> {{total}}</h2>
+        </div>
+        <div class="datos">
+            <h2>Datos de envío</h2>
+            <p><strong>Dirección: </strong> {{buyer.Dirección}}</p>
+            <p><strong>Depto: </strong> {{buyer.Timbre}}</p>
+            <p><strong>Provincia </strong> {{buyer.Provincia}}</p>
+            <p><strong>Localidad / Barrio: </strong> {{buyer.Localidad}}</p>
+            <p><strong>Código Postal: </strong> {{buyer.CódigoPostal}}</p>
+            <p><strong>Nombre y apellido: </strong> {{buyer.Nombre}} {{buyer.Apellido}}</p>
+            <p><strong>Celular: </strong> {{buyer.Teléfono}}</p>
+        </div>
+        <div class="pasos">
+            <h2>Acordate de seguir los siguientes pasos para abonar tu compra y recibirla</h2>
+
+            <p> 1. Realiza una transferencia o depósito por el total de tu compra a la siguiente cuenta
+                bancaria:
+                <strong>CBU: 4530000800012191244277 </strong>
+                <strong>ALIAS: CASAFUTBOLARG </strong>
+            </p>
+
+            <p> 2. Envía el comprobante de la transferencia a nuestro Whatsapp
+                <a href="https://wa.me/1121579897"><strong> 1121579897. </strong></a>
+                Hasta no enviar el comprobante la compra no se computa.
+                Es necesario que podamos ver el código de operación, fecha, importe y destino
+            </p>
+
+            <p>3. Verificamos tus datos y enviamos tu compra</p>
+        </div>
+        <div class="image-container">
+            <img src="cid:image">
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -39,7 +39,6 @@ export default function CheckOut() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmited(true)
-        setData({ ...data, "Provincia": selectedCity.name })
         navigate("/checkout/end")
         const response = await fetch(`${server}/orders/neworder`, {
             method: 'POST',

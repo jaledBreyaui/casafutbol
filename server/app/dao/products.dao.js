@@ -1,12 +1,12 @@
+
 const connection = require('../../config/mongoConnect')
 const Product = require('../models/products.model')
-const fs = require("fs")
+
 
 class ProductsDao {
     constructor() {
         connection()
     }
-
 
     async postProducts(obj) {
         try {
@@ -14,17 +14,22 @@ class ProductsDao {
             await product.save()
             return { msj: 'Producto añadido!', add }
         } catch (error) {
-            console.log(error);
+            return error
         }
     }
 
-    async getAll(page) {
+    async getAll(page, size) {
         let limit = 12;
         let skip = (page - 1) * limit
         try {
             if (page === undefined) {
                 const prod = await Product.find({})
                 return prod
+            }
+            if (size !== "") {
+                const totalItems = await Product.count({}).where(`stock.${size}`).gte(1)
+                const prod = await Product.find({}).where(`stock.${size}`).gte(1).skip(skip).limit(12)
+                return { prod: prod, totalItems: totalItems }
             }
             const totalItems = await Product.count({})
             const prod = await Product.find({}).skip(skip).limit(12)
@@ -45,13 +50,15 @@ class ProductsDao {
     }
 
 
-    async getByCategory(category, page, filter) {
+    async getByCategory(category, page, size) {
         let limit = 12;
         let skip = (page - 1) * limit
         try {
-            if (filter) {
-                const prod = await Product.find().where(`stock.${filter}`).gte(1).where("category").regex(category).skip(skip).limit(12)
-                return prod
+            if (size !== "") {
+                console.log(size)
+                const totalItems = await Product.count().where(`stock.${size}`).gte(1).where("category").regex(category)
+                const prod = await Product.find().where(`stock.${size}`).gte(1).where("category").regex(category).skip(skip).limit(12)
+                return { prod: prod, totalItems: totalItems }
             }
             const totalItems = await Product.count({ "category": { $regex: category } })
             const prod = await Product.find({ "category": { $regex: category } }).skip(skip).limit(12)
@@ -61,14 +68,13 @@ class ProductsDao {
         }
     }
 
-    async getByTeam(team, page, filter) {
+    async getByTeam(team, page, size) {
         let limit = 12;
         let skip = (page - 1) * limit
         try {
-            if (filter) {
-                console.log(team, filter);
-                const totalItems = await Product.count().where(`stock.${filter}`).gte(1).where("team").equals(team)
-                const prod = await Product.find({ "team": team }).where(`stock.${filter}`).gte(1).skip(skip).limit(12)
+            if (size !== "") {
+                const totalItems = await Product.count().where(`stock.${size}`).gte(1).where("team").equals(team)
+                const prod = await Product.find({ "team": team }).where(`stock.${size}`).gte(1).skip(skip).limit(12)
                 return { prod: prod, totalItems: totalItems, prueba: prueba }
             }
             const totalItems = await Product.count({ "team": team })
@@ -99,6 +105,21 @@ class ProductsDao {
             )
 
             return { retro: retros, estampadas: estampadas, actual: actuales, mangaLarga: mangaLarga }
+        } catch (error) {
+            return error
+        }
+    }
+
+    async decreaseStock(id, selectedSize, quantity) {
+        try {
+            const product = await this.getById(id)
+            const stock = product[0].stock[selectedSize]
+            if (stock > 0) {
+                product[0].stock[selectedSize] = stock - quantity
+                const update = await Product.updateOne({ "_id": id }, { $set: { stock: product[0].stock } })
+                await update.save()
+            }
+            return product
         } catch (error) {
             return error
         }

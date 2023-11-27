@@ -15,6 +15,7 @@ function ProductListContainer() {
     const [productsLength, setProductsLength] = useState()
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
+    const [size, setSize] = useState()
     const { searchFilter } = useFilters()
     const [breadcrumb, setBreadcrumb] = useState({
         title: "no",
@@ -33,7 +34,7 @@ function ProductListContainer() {
         setLoading(true)
         try {
             if (category === undefined && team === undefined) {
-                const response = await fetch(`${server}/products/?page=${currentPage}`)
+                const response = await fetch(`${server}/products/?page=${currentPage}&size=${size ? size.toLowerCase() : ""}`)
                 if (!response.ok) {
                     throw new Error('Could not fetch products')
                 }
@@ -42,7 +43,7 @@ function ProductListContainer() {
                 setProductsLength(data.totalItems)
             }
             if (category) {
-                const response = await fetch(`${server}/products-category/${category.toUpperCase()}/?page=${currentPage}`)
+                const response = await fetch(`${server}/products-category/${category.toUpperCase()}/?page=${currentPage}&size=${size ? size.toLowerCase() : ""}`)
                 if (!response.ok) {
                     throw new Error('Could not fetch products')
                 }
@@ -51,7 +52,7 @@ function ProductListContainer() {
                 setProductsLength(data.totalItems)
             }
             if (team) {
-                const response = await fetch(`${server}/products-team/${team.toUpperCase()}/?page=${currentPage}`)
+                const response = await fetch(`${server}/products-team/${team.toUpperCase()}/?page=${currentPage}&size=${size ? size.toLowerCase() : ""}`)
                 if (!response.ok) {
                     throw new Error('Could not fetch products')
                 }
@@ -79,14 +80,17 @@ function ProductListContainer() {
     useEffect(() => {
         fetchProducts()
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
-        console.log(category)
-    }, [currentPage, search, setProducts, category, team])
+    }, [currentPage, search, setProducts, category, team, setSize, size])
+
+    useEffect(() => {
+        setCurrentPage(1)
+    }, [setSize, size])
 
 
     return (
         <div className="product-list-container-wrapper">
             <Breadcrumbs item={breadcrumb} />
-            <SideMenu />
+            <SideMenu setSize={setSize} size={size} />
             <ProductList className={"product-list"} products={products} loading={loading} />
             <Pagination totalPages={Math.ceil(productsLength / 12)}
                 setCurrentPage={setCurrentPage}

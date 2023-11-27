@@ -20,7 +20,6 @@ export default function FinalCheckOut() {
                             1. Realiza una transferencia o depósito por el total de tu compra a la siguiente cuenta bancaria:<br></br>
                             <p><strong>CBU: 4530000800012191244277 </strong></p>
                             <p><strong>ALIAS:  CASAFUTBOLARG </strong></p>
-                            <p><strong>TITULAR: MARGULIES FACUNDO </strong></p>
                         </div>
                     </div>
                     <div className="checkout-info-steps-2">

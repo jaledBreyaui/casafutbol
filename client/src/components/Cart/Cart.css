@@ -39,7 +39,7 @@
     border-radius: 10px;
     border: none;
     background-color: black;
-    color: white;
+    color: white !important;
     font-size: 15px;
     font-weight: 1000;
 }
