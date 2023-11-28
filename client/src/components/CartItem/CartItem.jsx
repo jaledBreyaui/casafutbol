@@ -15,7 +15,7 @@ function CartItem({ item }) {
     return (
         <div className="cart-item">
             <div className="cart-item-img">
-                <img src={'https://casafutbol-production.up.railway.app/' + item.path} />
+                <img src={'https://casafutbol-production.up.railway.app/' + item.path} alt={`${item.title} image`} />
             </div>
             <div className="cart-item-data">
                 <p className="cart-item-title">{item.title}</p>

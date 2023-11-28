@@ -2,12 +2,17 @@ import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import CartItem from "../CartItem/CartItem"
 import "./FinalCheckOut.css"
+import { Helmet } from "react-helmet"
 
 export default function FinalCheckOut() {
     const { cartItems, total } = useContext(CartContext)
 
     return (
         <section className="checkout-end-container">
+            <Helmet>
+                <title>Pago y Envío | Casa Futbol</title>
+                <meta name="description" content="checkout-info"></meta>
+            </Helmet>
             <div className="checkout-end-header">
                 <h1>¡Gracias por tu compra ya separamos tus productos!</h1>
                 <h4>Seguí los siguientes pasos para abonar tu compra y recibirla</h4>

@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import Pagination from "../Pagination/Pagination";
 import { useFilters } from "../../hooks/useFilters";
+import { Helmet } from "react-helmet"
 
 function ProductListContainer() {
     const server = import.meta.env.PROD ? "https://casafutbol-production.up.railway.app" : " http://localhost:3001"
@@ -17,11 +18,13 @@ function ProductListContainer() {
     const [currentPage, setCurrentPage] = useState(1)
     const [size, setSize] = useState()
     const { searchFilter } = useFilters()
+
     const [breadcrumb, setBreadcrumb] = useState({
         title: "no",
         generalCategory: "Camisetas",
         category: ""
     })
+    let title = category || team || (search ? `Resultados para ${search}` : "Camisetas")
     useEffect(() => {
         setBreadcrumb({
             title: "no",
@@ -89,6 +92,11 @@ function ProductListContainer() {
 
     return (
         <div className="product-list-container-wrapper">
+            <Helmet>
+                <title>{title} | Casa Futbol</title>
+                <meta name="description" content={"Compra a través de nuestra tienda camisetas de " + title + "al mejor precio"}></meta>
+
+            </Helmet>
             <Breadcrumbs item={breadcrumb} />
             <SideMenu setSize={setSize} size={size} />
             <ProductList className={"product-list"} products={products} loading={loading} />

@@ -46,7 +46,7 @@ export default function BasicDemo() {
     return (
         <div className="">
             <Menubar model={items}
-                start={<Link to="/"> <img src={logo} alt="" id="logo" /> </Link>}
+                start={<Link to="/"> <img src={logo} alt="Logo de CasaFutbol" id="logo" /> </Link>}
                 end={<CartIcon />}
             />
         </div>

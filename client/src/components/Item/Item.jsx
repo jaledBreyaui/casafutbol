@@ -39,7 +39,7 @@ export default function Item({ prod, loading }) {
             {loading && <ProgressSpinner />}
             <Breadcrumbs item={breadcrumb} />
             <div className='item-image'>
-                <img src={`${server}` + prod.path} />
+                <img src={`${server}` + prod.path} alt={`${prod.title} image`} />
             </div>
             <div className='item-info'>
                 <div>

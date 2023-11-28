@@ -18,7 +18,7 @@ export default function Footer() {
                     </ul>
                 </div> */}
                 <div className="footerlogo-container">
-                    <img src={logo} className="footer-logo" />
+                    <img src={logo} alt="Logo de CasaFutbol" className="footer-logo" />
                 </div>
                 <div className="socials-container" >
                     <h4>Seguinos en Nuestras Redes</h4>

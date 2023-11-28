@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import CategoryContainer from "../CategoryContainer/CategoryContainer";
 import InfoContainer from "../InfoContainer/InfoContainer";
 import "./HomePage.css"
+import { Helmet } from "react-helmet";
 
 export default function HomePage() {
     const categories = [
@@ -52,6 +53,11 @@ export default function HomePage() {
 
     return (
         <main className="homepage">
+            <Helmet>
+                <title>Inicio | Casa Futbol</title>
+                <meta name="description" content="Comprá las mejores camisetas tanto actuales como retro a través de nuestra tienda online.
+                    Somos Casa Futbol tenemos gran variedad en camisetas de futbol. Explorá nuestras categorías Actuales Retro Selecciones Boca River Argentina"></meta>
+            </Helmet>
             <section className="homepage-header">
                 <div className="homepage-image"></div>
                 <div className="homepage-text">

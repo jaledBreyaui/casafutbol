@@ -12,7 +12,7 @@ import Cart from "./components/Cart/Cart"
 import CheckOut from "./components/CheckOut/CheckOut"
 import FinalCheckOut from "./components/FinalCheckOut/FinalCheckOut.jsx"
 import Orders from "./views/Orders.jsx"
-
+import NotFound from "./views/NotFound.jsx"
 
 function App() {
   return (
@@ -33,6 +33,8 @@ function App() {
                 <Route exact path="/checkout/start" element={<CheckOut />} />
                 <Route exact path="/checkout/end" element={<FinalCheckOut />} />
                 <Route exact path="/admin/orders" element={<Orders />} />
+                <Route path="*" element={<NotFound />} />
+
               </Routes>
               <Footer />
             </ScrollToTop>

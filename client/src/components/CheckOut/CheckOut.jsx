@@ -6,15 +6,9 @@ import "./Checkout.css"
 import SimpleReactValidator from "simple-react-validator"
 import { useNavigate } from "react-router-dom";
 import cities from "../../utils/cities"
-
-
-// service_id : service_tm3zcgt
-
-
-// import FinalCheckOut from "../FinalCheckOut/FinalCheckOut";
+import { Helmet } from "react-helmet";
 
 export default function CheckOut() {
-
     const server = import.meta.env.PROD ? "https://casafutbol-production.up.railway.app" : " http://localhost:3001"
 
     const [visible, setVisible] = useState(false);
@@ -74,6 +68,10 @@ export default function CheckOut() {
 
     return (
         <div className="checkout-container">
+            <Helmet>
+                <title>Datos de Envío | Casa Futbol</title>
+                <meta name="description" content="checkout"></meta>
+            </Helmet>
             <form onSubmit={handleSubmit} className="formulario">
                 <div className="formulario-datospersonales">
                     {isSubmited && validator.showMessages()}

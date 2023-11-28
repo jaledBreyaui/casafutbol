@@ -49,7 +49,7 @@ export default function MenuResponsive() {
             </Sidebar>
             <div className="responsive-navbar">
                 <button onClick={() => setVisible(true)}> <i className="pi pi-bars" style={{ color: 'white', fontSize: "1.8rem" }}></i></button>
-                <Link to="/" ><img src={logo} alt="" id="logo" /></Link>
+                <Link to="/" ><img src={logo} alt="Logo de CasaFutbol" id="logo" /></Link>
                 <CartIcon />
             </div>
         </div >
