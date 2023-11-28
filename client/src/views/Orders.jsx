@@ -49,9 +49,6 @@ function LoggedIn() {
         const data = await response.json()
         setOrders(data)
     }
-    useEffect(() => {
-        fetchOrders()
-    }, [handleDelete])
 
     function getByValue(order) {
         const entries = Object.entries(order)
@@ -77,6 +74,9 @@ function LoggedIn() {
         const result = await response.json();
         console.log(result)
     }
+    useEffect(() => {
+        fetchOrders()
+    }, [handleDelete])
 
     return (
         <div className="admin-orders-wrapper">
