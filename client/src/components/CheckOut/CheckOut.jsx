@@ -44,8 +44,7 @@ export default function CheckOut() {
         if (!response.ok) {
             throw new Error('Could not fetch products')
         }
-        // setOrderId(result.id);
-
+        localStorage.setItem('cartItems', JSON.stringify([]))
     }
 
     const handleNextStep = (e) => {

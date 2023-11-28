@@ -15,12 +15,9 @@ export function CartProvider({ children }) {
     }
     useEffect(() => {
         const cartItemsData = localStorage.getItem('cartItems')
-
         if (cartItemsData) {
             setCartItems(JSON.parse(cartItemsData))
         }
-
-
     }, [])
 
     useEffect(() => {
@@ -48,6 +45,7 @@ export function CartProvider({ children }) {
     }
     const emptyCart = () => {
         setCartItems([])
+        localStorage.setItem('cartItems', JSON.stringify(cartItems))
     }
     // const addToCart = (item, count) => {
     //     if (isInCart(item.id)) {
