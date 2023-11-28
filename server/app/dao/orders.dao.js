@@ -50,7 +50,7 @@ class OrdersDao {
     async deleteOrder(id) {
         try {
             const order = await this.getOrderById(id)
-            order.products.map(async (prod) => {
+            order[0].products.map(async (prod) => {
                 await Product.increaseStock(prod._id, prod.talleElegido.toLowerCase(), 1)
             })
             const deleted = await Order.findOneAndDelete({ "_id": id })
