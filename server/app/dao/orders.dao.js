@@ -36,6 +36,31 @@ class OrdersDao {
             return error
         }
     }
+    async getOrderById(id) {
+        try {
+            const order = await Order.find({ "_id": id })
+            return order
+        } catch (error) {
+            return error
+        }
+    }
+
+
+
+    async deleteOrder(id) {
+        try {
+            const order = await this.getOrderById(id)
+            console.log(order)
+            // order.products.map(async (prod) => {
+            //     await Product.increaseStock(prod._id, prod.talleElegido.toLowerCase(), 1)
+            // })
+            const deleted = await Order.findOneAndDelete({ "_id": id })
+            await deleted.save()
+            return deleted
+        } catch (error) {
+            return error
+        }
+    }
 
 
 }

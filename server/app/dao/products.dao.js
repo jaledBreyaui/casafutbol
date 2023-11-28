@@ -125,6 +125,19 @@ class ProductsDao {
         }
     }
 
+    async increaseStock(id, selectedSize, quantity) {
+        try {
+            const product = await this.getById(id)
+            const stock = product[0].stock[selectedSize]
+            product[0].stock[selectedSize] = stock + quantity
+            const update = await Product.updateOne({ "_id": id }, { $set: { stock: product[0].stock } })
+            await update.save()
+            return product
+        } catch (error) {
+            return error
+        }
+    }
+
     async delete() {
         try {
             const products = await Product.deleteMany({})

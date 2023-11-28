@@ -50,8 +50,6 @@ export default function CheckOut() {
         if (!response.ok) {
             throw new Error('Could not fetch products')
         }
-        const result = await response.json();
-        console.log(result)
         // setOrderId(result.id);
 
     }
@@ -66,7 +64,6 @@ export default function CheckOut() {
                 products: cartItems,
                 total: total()
             })
-            console.log(order)
             setVisible(true)
         }
     }

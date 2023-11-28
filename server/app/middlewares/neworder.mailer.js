@@ -7,7 +7,7 @@ const transporter = nodemailer.createTransport({
     host: 'smtp-relay.brevo.com',
     port: 587,
     auth: {
-        user: "jaledbreyaui.web@gmail.com",
+        user: process.env.ADMIN_BREVO_MAIL,
         pass: process.env.ADMIN_MAIL_PASS
     }
 });
@@ -28,8 +28,8 @@ transporter.use('compile', hbs(handlebarOptions));
 
 const newOrderMail = (buyer, products, total, id) => {
     const mailOptions = {
-        from: 'casafutbolarg@gmail.com',
-        to: [buyer.Email, "casafutbolarg@gmail.com"],
+        from: process.env.ADMIN_MAIL,
+        to: [buyer.Email, process.env.ADMIN_MAIL],
         subject: "Compra realizada CasaFutbol",
         template: 'email',
         context: {

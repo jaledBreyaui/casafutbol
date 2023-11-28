@@ -340,3 +340,77 @@ body {
         justify-items: center;
     }
 }
+
+
+/*  
+ADMIN  SIDE
+*/
+
+.admin-orders-container {
+    min-height: 60vh;
+    margin-top: 200px;
+}
+
+.admin-orders-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.admin-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 3%;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.301);
+    gap: 50px;
+}
+
+.admin-order>div {
+    width: 23%;
+    flex: 1 1 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+    gap: 20px;
+}
+
+.admin-orders-cancel-btn {
+    padding: 20px;
+    font-weight: 600;
+    background-color: rgba(255, 0, 0, 0.85);
+    color: white;
+    height: 100%;
+}
+
+.admin-orders-signin>form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.admin-orders-signin>form>input {
+    width: 350px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.admin-orders-signin>form>button {
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: blueviolet;
+}

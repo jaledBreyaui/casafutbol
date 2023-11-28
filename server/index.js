@@ -19,7 +19,7 @@ app.use(cors(
     {
         origin: ["https://www.somoscasafutbol.com", 'http://127.0.0.1:5173', "http://localhost:5173"],
         credentials: true,
-        methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
+        methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD", "DELETE"],
         allowedHeaders: ['Content-Type', 'Authorization']
     }
 ))

@@ -1,7 +1,7 @@
-get  http://localhost:3001/products-category/Selecciones/filter/l/?page=2 HTTP/1.1
+get  http://localhost:3001/orders/getorders HTTP/1.1
 Content-Type: application/json
 
-
+ 
 # {
 #  "order":{ 
 #   "buyer": {

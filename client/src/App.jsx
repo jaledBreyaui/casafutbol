@@ -11,6 +11,7 @@ import ScrollToTop from "./assets/scrollToTop"
 import Cart from "./components/Cart/Cart"
 import CheckOut from "./components/CheckOut/CheckOut"
 import FinalCheckOut from "./components/FinalCheckOut/FinalCheckOut.jsx"
+import Orders from "./views/Orders.jsx"
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                 <Route exact path="/products/search/:search" element={<ProductListContainer />} />
                 <Route exact path="/checkout/start" element={<CheckOut />} />
                 <Route exact path="/checkout/end" element={<FinalCheckOut />} />
+                <Route exact path="/admin/orders" element={<Orders />} />
               </Routes>
               <Footer />
             </ScrollToTop>
