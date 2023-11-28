@@ -22,8 +22,6 @@ function LogIn({ setIsloged }) {
             setIsloged(true)
         }
     }
-
-
     const handleChange = (e) => {
         e.preventDefault()
         const { name, value } = e.target;
@@ -53,7 +51,7 @@ function LoggedIn() {
     }
     useEffect(() => {
         fetchOrders()
-    }, [])
+    }, [handleDelete])
 
     function getByValue(order) {
         const entries = Object.entries(order)
@@ -86,7 +84,6 @@ function LoggedIn() {
                 orders.map((order, i) => {
                     return <div key={i} className="admin-order">
                         <p>#{order._id} </p>
-
                         <div className="admin-orders-datos">
                             {getByValue(order.buyer)}
                         </div>
@@ -96,7 +93,6 @@ function LoggedIn() {
                             })}
                         </div>
                         <div>
-
                             <p>
                                 Total: {order.total}
                             </p>

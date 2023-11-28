@@ -54,7 +54,7 @@
     font-family: 'Poppins', sans-serif;
     width: 100%;
     border-radius: 20px;
-
+    color: black !important;
     letter-spacing: 1.2px;
     border: none;
     background: var(--gradient);
