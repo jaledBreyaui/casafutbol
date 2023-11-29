@@ -26,7 +26,7 @@ class ProductsDao {
                 const prod = await Product.find({})
                 return prod
             }
-            if (size !== "") {
+            if (size !== undefined && size !== "") {
                 const totalItems = await Product.count({}).where(`stock.${size}`).gte(1)
                 const prod = await Product.find({}).where(`stock.${size}`).gte(1).skip(skip).limit(12)
                 return { prod: prod, totalItems: totalItems }
@@ -54,7 +54,7 @@ class ProductsDao {
         let limit = 12;
         let skip = (page - 1) * limit
         try {
-            if (size !== undefined) {
+            if (size !== undefined && size !== "") {
                 const totalItems = await Product.count().where(`stock.${size}`).gte(1).where("category").regex(category)
                 const prod = await Product.find().where(`stock.${size}`).gte(1).where("category").regex(category).skip(skip).limit(12)
                 return { prod: prod, totalItems: totalItems }
@@ -71,7 +71,7 @@ class ProductsDao {
         let limit = 12;
         let skip = (page - 1) * limit
         try {
-            if (size !== undefined) {
+            if (size !== undefined && size !== "") {
                 const totalItems = await Product.count().where(`stock.${size}`).gte(1).where("team").equals(team)
                 const prod = await Product.find({ "team": team }).where(`stock.${size}`).gte(1).skip(skip).limit(12)
                 return { prod: prod, totalItems: totalItems, prueba: prueba }
