@@ -16,7 +16,6 @@ export default function Breadcrumbs({ item }) {
         if (params) {
             setlocation(params.team || params.category || params.search)
         }
-        console.log(location)
     }, [params])
 
     return (

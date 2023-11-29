@@ -54,8 +54,7 @@ class ProductsDao {
         let limit = 12;
         let skip = (page - 1) * limit
         try {
-            if (size !== "") {
-                console.log(size)
+            if (size !== undefined) {
                 const totalItems = await Product.count().where(`stock.${size}`).gte(1).where("category").regex(category)
                 const prod = await Product.find().where(`stock.${size}`).gte(1).where("category").regex(category).skip(skip).limit(12)
                 return { prod: prod, totalItems: totalItems }
@@ -72,7 +71,7 @@ class ProductsDao {
         let limit = 12;
         let skip = (page - 1) * limit
         try {
-            if (size !== "") {
+            if (size !== undefined) {
                 const totalItems = await Product.count().where(`stock.${size}`).gte(1).where("team").equals(team)
                 const prod = await Product.find({ "team": team }).where(`stock.${size}`).gte(1).skip(skip).limit(12)
                 return { prod: prod, totalItems: totalItems, prueba: prueba }

@@ -22,6 +22,7 @@ export default function ItemDetail() {
             }
             const data = await sameCategory.json()
             const data1 = await sameTeam.json()
+            console.log({ data: data, data1: data1 })
             const sameTeamFiltered = data1.prod.filter((prod) => {
                 return prod._id !== id
             })
@@ -50,6 +51,7 @@ export default function ItemDetail() {
 
     useEffect(() => {
         fetchItem()
+        console.log(relatedItems)
     }, [id])
 
     return (

@@ -13,13 +13,11 @@ export function ProductsProvider({ children }) {
         try {
             setLoading(true);
             const response = await fetch(`${server}/products`)
-            // const response = await fetch("http://localhost:3001/products")
             if (!response.ok) {
                 console.log(response)
                 throw new Error('Could not fetch products')
             }
             const data = await response.json()
-            console.log(data)
             setProducts(data)
         } catch (error) {
             console.log(error)

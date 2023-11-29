@@ -42,7 +42,6 @@ export default class MultipleItems extends Component {
                 }
             ]
         };
-        console.log(this.props)
         return (
             <section className="carousel-section">
                 <h2 className="carousel-section-title">{this.props.section}</h2>
