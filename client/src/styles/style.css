@@ -292,6 +292,18 @@ body {
     background-color: rgba(128, 128, 128, 0.142);
 }
 
+.reset-filters-btn {
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+}
+
+.reset-filters-btn:hover {
+    text-decoration: underline;
+}
 
 
 #pr_id_32 {

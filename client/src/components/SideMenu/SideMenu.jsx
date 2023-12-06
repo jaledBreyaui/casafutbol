@@ -37,6 +37,7 @@ function CategorySelector({ categories, setSize }) {
                     })
                 }
             </div>
+            <button className='reset-filters-btn' onClick={() => setSize('')}>Reestablecer filtros</button>
         </div>
     )
 }
