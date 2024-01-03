@@ -26,17 +26,10 @@ export default function Footer() {
                         <a href="https://www.instagram.com/casafutbolarg/" target="blank">
                             <span className="pi pi-instagram" style={{ fontSize: '1.8rem' }}></span>
                         </a>
-                        <a href="">
-                            <span className="material-symbols-outlined">
-                                music_note
-                            </span>
-                        </a>
-
                     </div>
                 </div>
                 <div className="copy-container">
                     <p>&copy; 2023 Casa Futbol</p>
-
                 </div>
             </div>
         </section>

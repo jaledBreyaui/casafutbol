@@ -23,7 +23,7 @@ export default function Product({ prod, className }) {
             <Link to={"/item/" + prod._id} >
                 <div className=''>
                     <LazyLoadImage
-                        alt={`${prod.title}`}
+                        alt={`${prod.title}product's image`}
                         src={`${server}` + prod.path}
                         className='product-image'
                         effect='opacity'

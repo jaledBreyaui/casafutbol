@@ -14,7 +14,7 @@ export default function FinalCheckOut() {
                 <meta name="description" content="checkout-info"></meta>
             </Helmet>
             <div className="checkout-end-header">
-                <h1>¡Gracias por tu compra ya separamos tus productos!</h1>
+                <h1>¡Muchas Gracias por iniciar tu compra!</h1>
                 <h4>Seguí los siguientes pasos para abonar tu compra y recibirla</h4>
             </div>
             <div className="checkout-info">
@@ -22,7 +22,8 @@ export default function FinalCheckOut() {
                     <div className="checkout-info-steps-1">
                         <span>  <i className="pi pi-credit-card" style={{ color: "black", fontSize: "2rem" }}></i></span>
                         <div>
-                            1. Realiza una transferencia o depósito por el total de tu compra a la siguiente cuenta bancaria:<br></br>
+                            1. Realiza una transferencia o depósito por el total de tu compra <strong>dentro de las primeras 24hs</strong> a la siguiente cuenta bancaria:<br></br>
+                            <br></br>
                             <p><strong>CBU: 4530000800012191244277 </strong></p>
                             <p><strong>ALIAS:  CASAFUTBOLARG </strong></p>
                         </div>

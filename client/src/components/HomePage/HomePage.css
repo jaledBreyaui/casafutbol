@@ -82,6 +82,10 @@
     .header-title {
         font-size: 25px;
     }
+}
 
-
+@media screen and (max-width:650px) {
+    .homepage-image {
+        background-image: url(/imgs/banner-mobile.jpg);
+    }
 }
