@@ -450,3 +450,18 @@ ADMIN  SIDE
     border: none;
     background-color: blueviolet;
 }
+
+@media screen and (max-width:800px){
+    .admin-order{
+        flex-direction: column;
+        
+    }
+    .admin-order>div{
+        margin: 0;
+        width:100%;
+        justify-content:flex-start;
+        align-items: start;
+
+    }
+}
+
