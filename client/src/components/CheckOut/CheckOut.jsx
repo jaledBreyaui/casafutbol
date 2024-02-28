@@ -182,7 +182,7 @@ export default function CheckOut() {
                     <p>Envio a través del Correo Argentino:
                         entre 2 y 5 dias hábiles
                     </p>
-                    <p >Gratis</p>
+
                 </div>
                 <div className="checkout-total">
                     <h2>Total:</h2>

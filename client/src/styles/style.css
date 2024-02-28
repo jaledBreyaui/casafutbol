@@ -133,7 +133,7 @@ body {
     aspect-ratio: 4/5;
 }
 
-.product-card>a::after,
+/* .product-card>a::after,
 .product-list>a::after {
     content: "Envío Gratis";
     position: absolute;
@@ -145,7 +145,7 @@ body {
     font-size: 12px;
     padding: 0 7px;
     font-weight: 400;
-}
+} */
 
 .product-price {
     font-size: 16px;
